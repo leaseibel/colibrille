@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Colors */
+  --color-deep-green-900: #16302d;
+  --color-deep-green-800: #0b5b53;
+  --color-deep-green-inset: #09211e;
+  --color-secondary: #f3e1a1;
+  --color-surface-raised: #fbfbfb;
+  --color-surface-base: #f0f0f0;
+  --color-ghost-inverted-stroke: rgba(255, 255, 255, 0.2);
+  --color-glass: rgba(255, 255, 255, 0.1);
+  --color-shadow: rgba(0, 0, 0, 0.05);
+
+  /* Typography */
+  --font-display: 'Montserrat', sans-serif;
+  --font-content: 'Inter', sans-serif;
+  --font-epigraph: 'Petrona', serif;
+
+  /* Font sizes */
+  --text-xxs: 12px;
+  --text-xs: 14px;
+  --text-sm: 16px;
+  --text-md: 20px;
+  --text-lg: 24px;
+  --text-xl: 28px;
+
+  /* Line heights */
+  --leading-xxs: 16px;
+  --leading-xs: 20px;
+  --leading-sm: 24px;
+  --leading-md: 32px;
+  --leading-lg: 36px;
+  --leading-xl: 40px;
+
+  /* Font weights */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+
+  /* Spacing */
+  --space-0: 0px;
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+
+  /* Layout */
+  --max-width: 1440px;
+  --padding-lg: 24px;
+  --padding-md: 16px;
+
+  /* Border radius */
+  --radius-atom: 4px;
+  --radius-container: 8px;
+  --radius-pill: 999px;
+}
+
+body {
+  font-family: var(--font-content);
+  color: var(--color-deep-green-900);
+  background: var(--color-surface-base);
+}
