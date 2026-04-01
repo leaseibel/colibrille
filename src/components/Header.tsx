@@ -16,9 +16,9 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 bg-deep-green-900/95 backdrop-blur-sm border-b border-[var(--color-ghost-inverted-stroke)]">
+    <header className="sticky top-0 z-50 bg-[var(--color-surface-brand-background-base)]/95 backdrop-blur-sm border-b border-ghost-inverted-stroke">
       <div className="max-w-container mx-auto flex items-center justify-between px-24 py-12 lg:px-24 md:px-16">
-        <Link href="/" className="font-display font-bold text-lg text-white">
+        <Link href="/" className="font-display font-bold text-lg text-brand-fg-neutral">
           Colibrille
         </Link>
 
@@ -31,8 +31,8 @@ export default function Header() {
                 href={item.href}
                 className={`px-16 py-8 rounded-atom text-sm font-medium transition-colors ${
                   isActive
-                    ? "text-secondary"
-                    : "text-white/80 hover:text-white"
+                    ? "text-brand-fg-accent"
+                    : "text-ghost-inverted-fg-neutral opacity-80 hover:opacity-100"
                 }`}
               >
                 {item.label}

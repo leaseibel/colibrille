@@ -1,6 +1,7 @@
 import { ButtonHTMLAttributes, AnchorHTMLAttributes } from "react";
+import { cn } from "@/lib/utils";
 
-type Variant = "accent" | "inset";
+type Variant = "accent" | "inset" | "secondary";
 
 type BaseProps = {
   variant?: Variant;
@@ -16,9 +17,11 @@ type ButtonProps = ButtonAsButton | ButtonAsLink;
 
 const variantStyles: Record<Variant, string> = {
   accent:
-    "bg-secondary text-deep-green-900 hover:brightness-95",
+    "bg-secondary text-secondary-foreground hover:bg-secondary-hovered active:bg-secondary-active",
   inset:
-    "bg-deep-green-inset text-white hover:brightness-110",
+    "bg-brand-inset text-brand-fg-neutral hover:bg-brand-inset-hovered active:bg-brand-inset-active",
+  secondary:
+    "bg-primary-raised text-primary-foreground border border-primary-stroke hover:bg-primary-base active:bg-primary-base",
 };
 
 export default function Button({
@@ -27,12 +30,12 @@ export default function Button({
   className = "",
   ...props
 }: ButtonProps) {
-  const classes = [
-    "inline-flex items-center justify-center gap-8 px-24 py-12 font-display font-bold text-sm transition-all",
+  const classes = cn(
+    "inline-flex items-center justify-center px-16 py-8 font-content font-medium text-sm whitespace-nowrap cursor-pointer transition-colors duration-150 ease-in-out",
     pill ? "rounded-pill" : "rounded-atom",
     variantStyles[variant],
     className,
-  ].join(" ");
+  );
 
   if ("href" in props && props.href) {
     return <a className={classes} {...(props as ButtonAsLink)} />;

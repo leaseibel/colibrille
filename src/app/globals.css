@@ -2,69 +2,298 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * ============================================================
+ * DESIGN TOKENS — Figma source of truth
+ * ============================================================
+ * All visual values in this project MUST reference these tokens.
+ * Never hardcode hex colors, pixel values, or font names in
+ * components or Tailwind config — use var(--token) or the
+ * corresponding Tailwind utility (which itself maps to a token).
+ *
+ * COLORS — PRIMITIVES
+ *   --color-primitive-deep-green-800          #0b5b53
+ *   --color-primitive-deep-green-900          #16302d
+ *   --color-primitive-alpha-inverted-05       rgba(0,0,0,0.05)
+ *
+ * COLORS — SURFACE PRIMARY
+ *   --color-surface-primary-background-base   #f0f0f0
+ *   --color-surface-primary-background-raised #fbfbfb
+ *   --color-surface-primary-foreground        #16302d
+ *   --color-surface-primary-stroke            #b8b8b8
+ *
+ * COLORS — SURFACE BRAND
+ *   --color-surface-brand-background-base             #16302d
+ *   --color-surface-brand-background-raised           #0b5b53
+ *   --color-surface-brand-background-inset-rest       #09211e
+ *   --color-surface-brand-background-inset-hovered    #16302d
+ *   --color-surface-brand-background-inset-active     #16302d
+ *   --color-surface-brand-foreground-neutral          #fbfbfb
+ *   --color-surface-brand-foreground-accent           #f3e1a1
+ *
+ * COLORS — SURFACE SECONDARY
+ *   --color-surface-secondary-background-rest     #f3e1a1
+ *   --color-surface-secondary-background-hovered  #edcd81
+ *   --color-surface-secondary-background-active   #edcd81
+ *   --color-surface-secondary-foreground          #16302d
+ *
+ * COLORS — SURFACE GHOST
+ *   --color-surface-ghost-foreground              #2b2b2b
+ *
+ * COLORS — SURFACE GHOST INVERTED
+ *   --color-surface-ghost-inverted-background-rest            rgba(0,0,0,0)
+ *   --color-surface-ghost-inverted-background-hovered         rgba(0,0,0,0.05)
+ *   --color-surface-ghost-inverted-background-active          rgba(0,0,0,0.1)
+ *   --color-surface-ghost-inverted-background-selected-rest   rgba(0,0,0,0.2)
+ *   --color-surface-ghost-inverted-foreground-neutral         #fbfbfb
+ *   --color-surface-ghost-inverted-foreground-accent          #f3e1a1
+ *   --color-surface-ghost-inverted-stroke                     rgba(255,255,255,0.2)
+ *
+ * COLORS — SURFACE GLASS
+ *   --color-surface-glass-background              rgba(255,255,255,0.1)
+ *   --color-surface-glass-inverted-background     rgba(0,0,0,0.1)
+ *
+ * COLORS — SURFACE ACCENT
+ *   --color-surface-accent-background-rest        #f3d1f3
+ *   --color-surface-accent-foreground             #1b041b
+ *
+ * COLORS — SURFACE SHAPE
+ *   --color-surface-shape-brand                   #0b5b53
+ *   --color-surface-shape-accent                  #f3e1a1
+ *   --color-surface-shape-glass                   rgba(255,255,255,0.05)
+ *
+ * COLORS — SPECIFIC
+ *   --color-specific-scrim                        rgba(0, 0, 0, 0.2)
+ *
+ * FONT FAMILIES
+ *   --font-family-content    'Inter', sans-serif
+ *   --font-family-display    'Montserrat', sans-serif
+ *   --font-family-epigraph   'Petrona', serif
+ *
+ * FONT SIZES                    LINE HEIGHTS
+ *   --font-size-xxs  12px        --font-line-height-xxs  16px
+ *   --font-size-xs   14px        --font-line-height-xs   20px
+ *   --font-size-sm   16px        --font-line-height-sm   24px
+ *   --font-size-md   20px        --font-line-height-md   32px
+ *   --font-size-lg   24px        --font-line-height-lg   36px
+ *   --font-size-xl   28px        --font-line-height-xl   40px
+ *
+ * FONT WEIGHTS
+ *   --font-weight-regular  400
+ *   --font-weight-medium   500
+ *   --font-weight-bold     700
+ *
+ * LAYOUT — GAP / SPACING
+ *   --layout-gap-0     0px     --layout-gap-50    2px
+ *   --layout-gap-100   4px     --layout-gap-200   8px
+ *   --layout-gap-300   12px    --layout-gap-400   16px
+ *   --layout-gap-500   20px    --layout-gap-600   24px
+ *   --layout-gap-800   32px    --layout-gap-1000  40px
+ *
+ * LAYOUT — STRUCTURE
+ *   --layout-max-width-container              1440px
+ *   --layout-large-view-horizontal-padding    24px
+ *   --layout-medium-view-horizontal-padding   16px
+ *   --layout-small-view-horizontal-padding    16px
+ *   --layout-large-view-min-width             1024px
+ *   --layout-medium-view-min-width            768px
+ *   --layout-small-view-max-width             767px
+ *   --layout-header-height                    80px
+ *
+ * BORDER RADIUS
+ *   --border-radius-atom        4px
+ *   --border-radius-container   8px
+ *   --border-radius-rounded     999px
+ *
+ * ICON SIZES
+ *   --icon-size-small     16px
+ *   --icon-size-medium    20px
+ *   --icon-size-large     24px
+ *   --icon-size-x-large   36px
+ * ============================================================
+ */
+
 :root {
-  /* Colors */
-  --color-deep-green-900: #16302d;
-  --color-deep-green-800: #0b5b53;
-  --color-deep-green-inset: #09211e;
-  --color-secondary: #f3e1a1;
-  --color-surface-raised: #fbfbfb;
-  --color-surface-base: #f0f0f0;
-  --color-ghost-inverted-stroke: rgba(255, 255, 255, 0.2);
-  --color-glass: rgba(255, 255, 255, 0.1);
-  --color-shadow: rgba(0, 0, 0, 0.05);
+  /* ============ COLORS — PRIMITIVES ============ */
+  --color-primitive-deep-green-800: #0b5b53;
+  --color-primitive-deep-green-900: #16302d;
+  --color-primitive-alpha-inverted-05: rgba(0,0,0,0.05);
 
-  /* Typography */
-  --font-display: 'Montserrat', sans-serif;
-  --font-content: 'Inter', sans-serif;
-  --font-epigraph: 'Petrona', serif;
+  /* ============ COLORS — SURFACE PRIMARY ============ */
+  --color-surface-primary-background-base: #f0f0f0;
+  --color-surface-primary-background-raised: #fbfbfb;
+  --color-surface-primary-foreground: #16302d;
+  --color-surface-primary-stroke: #b8b8b8;
 
-  /* Font sizes */
-  --text-xxs: 12px;
-  --text-xs: 14px;
-  --text-sm: 16px;
-  --text-md: 20px;
-  --text-lg: 24px;
-  --text-xl: 28px;
+  /* ============ COLORS — SURFACE BRAND ============ */
+  --color-surface-brand-background-base: #16302d;
+  --color-surface-brand-background-raised: #0b5b53;
+  --color-surface-brand-background-inset-rest: #09211e;
+  --color-surface-brand-background-inset-hovered: #16302d;
+  --color-surface-brand-background-inset-active: #16302d;
+  --color-surface-brand-foreground-neutral: #fbfbfb;
+  --color-surface-brand-foreground-accent: #f3e1a1;
 
-  /* Line heights */
-  --leading-xxs: 16px;
-  --leading-xs: 20px;
-  --leading-sm: 24px;
-  --leading-md: 32px;
-  --leading-lg: 36px;
-  --leading-xl: 40px;
+  /* ============ COLORS — SURFACE SECONDARY ============ */
+  --color-surface-secondary-background-rest: #f3e1a1;
+  --color-surface-secondary-background-hovered: #edcd81;
+  --color-surface-secondary-background-active: #edcd81;
+  --color-surface-secondary-foreground: #16302d;
 
-  /* Font weights */
-  --weight-regular: 400;
-  --weight-medium: 500;
-  --weight-bold: 700;
+  /* ============ COLORS — SURFACE GHOST ============ */
+  --color-surface-ghost-foreground: #2b2b2b;
 
-  /* Spacing */
-  --space-0: 0px;
-  --space-2: 2px;
-  --space-4: 4px;
-  --space-8: 8px;
-  --space-12: 12px;
-  --space-16: 16px;
-  --space-20: 20px;
-  --space-24: 24px;
-  --space-32: 32px;
-  --space-40: 40px;
+  /* ============ COLORS — SURFACE GHOST INVERTED ============ */
+  --color-surface-ghost-inverted-background-rest: rgba(0,0,0,0);
+  --color-surface-ghost-inverted-background-hovered: rgba(0,0,0,0.05);
+  --color-surface-ghost-inverted-background-active: rgba(0,0,0,0.1);
+  --color-surface-ghost-inverted-background-selected-rest: rgba(0,0,0,0.2);
+  --color-surface-ghost-inverted-foreground-neutral: #fbfbfb;
+  --color-surface-ghost-inverted-foreground-accent: #f3e1a1;
+  --color-surface-ghost-inverted-stroke: rgba(255,255,255,0.2);
 
-  /* Layout */
-  --max-width: 1440px;
-  --padding-lg: 24px;
-  --padding-md: 16px;
+  /* ============ COLORS — SURFACE GLASS ============ */
+  --color-surface-glass-background: rgba(255,255,255,0.1);
+  --color-surface-glass-inverted-background: rgba(0,0,0,0.1);
 
-  /* Border radius */
-  --radius-atom: 4px;
-  --radius-container: 8px;
-  --radius-pill: 999px;
+  /* ============ COLORS — SURFACE ACCENT ============ */
+  --color-surface-accent-background-rest: #f3d1f3;
+  --color-surface-accent-foreground: #1b041b;
+
+  /* ============ COLORS — SURFACE SHAPE ============ */
+  --color-surface-shape-brand: #0b5b53;
+  --color-surface-shape-accent: #f3e1a1;
+  --color-surface-shape-glass: rgba(255,255,255,0.05);
+
+  /* ============ COLORS — SPECIFIC ============ */
+  --color-specific-scrim: rgba(0, 0, 0, 0.2);
+
+  /* ============ FONT FAMILIES ============ */
+  --font-family-content: 'Inter', sans-serif;
+  --font-family-display: 'Montserrat', sans-serif;
+  --font-family-epigraph: 'Petrona', serif;
+
+  /* ============ FONT SIZES ============ */
+  --font-size-xxs: 12px;
+  --font-size-xs: 14px;
+  --font-size-sm: 16px;
+  --font-size-md: 20px;
+  --font-size-lg: 24px;
+  --font-size-xl: 28px;
+
+  /* ============ FONT LINE HEIGHTS ============ */
+  --font-line-height-xxs: 16px;
+  --font-line-height-xs: 20px;
+  --font-line-height-sm: 24px;
+  --font-line-height-md: 32px;
+  --font-line-height-lg: 36px;
+  --font-line-height-xl: 40px;
+
+  /* ============ FONT WEIGHTS ============ */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* ============ LAYOUT — GAP / SPACING ============ */
+  --layout-gap-0: 0px;
+  --layout-gap-50: 2px;
+  --layout-gap-100: 4px;
+  --layout-gap-200: 8px;
+  --layout-gap-300: 12px;
+  --layout-gap-400: 16px;
+  --layout-gap-500: 20px;
+  --layout-gap-600: 24px;
+  --layout-gap-800: 32px;
+  --layout-gap-1000: 40px;
+
+  /* ============ LAYOUT — STRUCTURE ============ */
+  --layout-max-width-container: 1440px;
+  --layout-max-width-content: 720px;
+  --layout-large-view-horizontal-padding: 24px;
+  --layout-medium-view-horizontal-padding: 16px;
+  --layout-small-view-horizontal-padding: 16px;
+  --layout-large-view-min-width: 1024px;
+  --layout-medium-view-min-width: 768px;
+  --layout-small-view-max-width: 767px;
+  --layout-header-height: 80px;
+
+  /* ============ BORDER RADIUS ============ */
+  --border-radius-atom: 4px;
+  --border-radius-container: 8px;
+  --border-radius-rounded: 999px;
+
+  /* ============ ICON SIZES ============ */
+  --icon-size-small: 16px;
+  --icon-size-medium: 20px;
+  --icon-size-large: 24px;
+  --icon-size-x-large: 36px;
 }
 
 body {
-  font-family: var(--font-content);
-  color: var(--color-deep-green-900);
-  background: var(--color-surface-base);
+  font-family: var(--font-family-content);
+  color: var(--color-surface-primary-foreground);
+  background: var(--color-surface-primary-background-base);
+}
+
+/* Hero car visibility */
+.hero-car {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .hero-car {
+    display: flex;
+    opacity: 1;
+    flex: 1;
+    min-width: 280px;
+    max-width: 340px;
+    min-height: 210px;
+    max-height: 255px;
+    aspect-ratio: 320 / 240;
+    position: relative;
+    overflow: visible;
+  }
+}
+
+/* Hero body responsive constraints */
+.hero-body {
+  min-width: unset;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .hero-body {
+    min-width: 620px;
+    max-width: 680px;
+    width: auto;
+  }
+}
+
+/* Hero action buttons */
+.hero-actions {
+  display: flex;
+  flex-direction: row;
+  gap: var(--layout-gap-500);
+  max-width: 440px;
+  width: 100%;
+}
+
+@media (max-width: 400px) {
+  .hero-actions {
+    flex-direction: column;
+    max-width: 100%;
+    padding: 0 var(--layout-medium-view-horizontal-padding);
+  }
+
+  .hero-actions > * {
+    width: 100%;
+    flex: unset;
+  }
+}
+
+/* Hide drawer on desktop */
+@media (min-width: 1024px) {
+  .drawer-overlay {
+    display: none !important;
+  }
 }

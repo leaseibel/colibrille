@@ -1,24 +1,32 @@
-import { ReactNode } from "react";
+import { type ElementType, type ComponentPropsWithoutRef } from "react";
+import { cn } from "@/lib/utils";
 
-type CardProps = {
+type CardProps<T extends ElementType = "div"> = {
   variant?: "raised" | "glass";
+  as?: T;
   className?: string;
-  children: ReactNode;
-};
+  children: React.ReactNode;
+} & Omit<ComponentPropsWithoutRef<T>, "children" | "className">;
 
 const variantStyles = {
-  raised: "bg-surface-raised shadow-card",
-  glass: "bg-glass border border-[var(--color-ghost-inverted-stroke)] backdrop-blur-sm",
+  raised: "bg-primary-raised shadow-card",
+  glass: "bg-glass",
 };
 
-export default function Card({
+export default function Card<T extends ElementType = "div">({
   variant = "raised",
-  className = "",
+  as,
+  className,
   children,
-}: CardProps) {
+  ...props
+}: CardProps<T>) {
+  const Component = as || "div";
   return (
-    <div className={`rounded-container p-24 ${variantStyles[variant]} ${className}`}>
+    <Component
+      className={cn("flex flex-col rounded-container", variantStyles[variant], className)}
+      {...props}
+    >
       {children}
-    </div>
+    </Component>
   );
 }

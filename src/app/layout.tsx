@@ -1,22 +1,23 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat, Petrona } from "next/font/google";
+import { Header } from "@/components/layout";
 import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-content",
+  variable: "--font-family-content",
   display: "swap",
 });
 
 const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-display",
+  variable: "--font-family-display",
   display: "swap",
 });
 
 const petrona = Petrona({
   subsets: ["latin"],
-  variable: "--font-epigraph",
+  variable: "--font-family-epigraph",
   display: "swap",
 });
 
@@ -36,7 +37,8 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${montserrat.variable} ${petrona.variable} antialiased`}
       >
-        {children}
+        <Header />
+        <main>{children}</main>
       </body>
     </html>
   );

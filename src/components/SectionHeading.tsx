@@ -8,9 +8,9 @@ export default function SectionHeading({
   inverted = false,
 }: SectionHeadingProps) {
   const lineColor = inverted
-    ? "border-[var(--color-ghost-inverted-stroke)]"
-    : "border-deep-green-900/20";
-  const textColor = inverted ? "text-white" : "text-deep-green-900";
+    ? "border-ghost-inverted-stroke"
+    : "border-primary-stroke";
+  const textColor = inverted ? "text-brand-fg-neutral" : "text-primary-foreground";
 
   return (
     <div className="flex items-center gap-24 w-full">
