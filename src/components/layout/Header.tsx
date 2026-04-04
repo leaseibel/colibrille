@@ -39,14 +39,19 @@ export default function Header({ className }: HeaderProps) {
     <>
     <header
       className={cn(
-        "fixed top-0 z-50 h-[var(--layout-header-height)] w-full transition-[background-color] duration-200 ease-in-out",
-        scrolled
-          ? "bg-[var(--color-surface-brand-background-raised)]"
-          : "bg-transparent",
+        "fixed top-0 z-50 w-full",
+        "h-[var(--layout-header-height)]",
+        "px-16 lg:px-24",
         className,
       )}
+      style={{
+        background: scrolled
+          ? 'var(--color-surface-brand-background-raised)'
+          : 'transparent',
+        transition: 'background-color 200ms ease',
+      }}
     >
-      <div className="mx-auto flex h-full max-w-container items-center justify-between px-16 lg:px-24">
+      <div className="mx-auto flex h-full w-full max-w-container items-center justify-between">
         {/* Logo */}
         <NextLink href="/">
           <Logo withBaseline={false} width={107} />

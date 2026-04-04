@@ -91,6 +91,12 @@ or the corresponding Tailwind utility that maps to it via `tailwind.config.ts`.
 |---|---|---|---|
 | `--color-specific-scrim` | `rgba(0,0,0,0.2)` | _(inline)_ | Drawer scrim overlay |
 
+### Gradients
+
+| Token | Value | Usage |
+|---|---|---|
+| `--gradient-linear-01` | `linear-gradient(to top, deep-green-900, deep-green-800)` | Body background (Figma "Linear 01") |
+
 ### Border radius
 
 | Token | Value | Tailwind | Usage |
@@ -164,6 +170,12 @@ or the corresponding Tailwind utility that maps to it via `tailwind.config.ts`.
 | `--layout-medium-view-min-width` | `768px` | `md:` breakpoint |
 | `--layout-small-view-max-width` | `767px` | Small viewport ceiling |
 | `--layout-header-height` | `80px` | Fixed header height / page top offset |
+
+## Layout utilities
+
+| Class | Description |
+|---|---|
+| `.section-outer` | Responsive horizontal padding for full-width sections: 24px at lg (≥1024px), 16px below. Apply to any `<section>` or wrapper that needs consistent edge padding. |
 
 ## Components
 

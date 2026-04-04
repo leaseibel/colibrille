@@ -14,7 +14,7 @@ export default function Testimonial({
   className,
 }: TestimonialProps) {
   return (
-    <div className={cn("relative w-[330px] flex flex-col gap-32", className)}>
+    <div className={cn("relative w-full min-w-0 flex flex-col gap-32", className)}>
       {/* Decorative shape */}
       <Image
         src="/assets/shapes/testimonial-shape.svg"
@@ -40,7 +40,7 @@ export default function Testimonial({
         </div>
 
         {/* Quote */}
-        <p className="w-full font-content font-medium text-sm text-primary-raised">
+        <p className="w-full break-words font-content font-medium text-sm text-primary-raised">
           {quote}
         </p>
 

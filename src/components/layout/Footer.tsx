@@ -17,7 +17,7 @@ export default function Footer({ className }: FooterProps) {
           {/* Logo + Social */}
           <div className="flex h-full flex-col justify-between md:col-span-4 md:row-span-2 lg:col-span-3 lg:row-span-2">
             <Logo withBaseline={true} width={180} />
-            <div className="mt-16 flex gap-16 text-ghost-inverted-fg-neutral md:mt-0">
+            <div className="mt-16 flex gap-24 text-ghost-inverted-fg-neutral md:mt-0">
               <a href="mailto:atelier.colibrille.17@gmail.com" aria-label="Email">
                 <Icon name="mail" size="x-large" />
               </a>
@@ -41,15 +41,15 @@ export default function Footer({ className }: FooterProps) {
 
           {/* Legal links */}
           <div className="flex flex-col gap-12 md:col-span-4 md:col-start-5 md:row-start-2 lg:col-span-2 lg:col-start-6 lg:row-start-1">
-            <Link variant="inverted" external href="#">Mentions Légales</Link>
-            <Link variant="inverted" external href="#">RGPD</Link>
-            <Link variant="inverted" external href="#">CGV / CGU</Link>
-            <Link variant="inverted" external href="#">Plan du site</Link>
+            <Link variant="inverted" href="#">Mentions Légales</Link>
+            <Link variant="inverted" href="#">RGPD</Link>
+            <Link variant="inverted" href="#">CGV / CGU</Link>
+            <Link variant="inverted" href="#">Plan du site</Link>
           </div>
 
           {/* Business info */}
           <div className="flex min-w-[240px] flex-col gap-32 md:col-span-4 md:col-start-9 md:row-span-2 lg:col-span-4 lg:col-start-9 lg:row-span-2">
-            {/* Contact */}
+            {/* Business contact */}
             <div className="flex flex-col gap-12">
               <Link variant="secondary" href="tel:+33611489861">
                 +33 6 11 48 98 61
@@ -57,40 +57,40 @@ export default function Footer({ className }: FooterProps) {
               <Link variant="secondary" href="mailto:atelier.colibrille.17@gmail.com">
                 atelier.colibrille.17@gmail.com
               </Link>
-            </div>
-
-            {/* Address + SIRET */}
-            <div className="flex flex-col gap-12 font-content font-normal text-xs text-primary-raised">
-              <span>2 rue Le Verrier, 17440 Aytré</span>
-              <span>SIRET : 100 817 677 844 48</span>
+              <span className="whitespace-nowrap font-content font-normal text-xs text-primary-raised">
+                2 rue Le Verrier, 17440 Aytré
+              </span>
+              <span className="whitespace-nowrap font-content font-normal text-xs text-primary-raised">
+                SIRET : 100 817 677 844 48
+              </span>
             </div>
 
             {/* Business hours */}
             <div className="flex w-full flex-col gap-2 rounded-atom bg-brand-inset p-12">
-              <div>
+              <p>
                 <span className="font-content font-bold text-xs text-brand-fg-accent">
                   Lun - Ven :{" "}
                 </span>
-                <span className="font-content font-normal text-xs text-primary-raised">
+                <span className="font-content font-bold text-xs text-primary-raised">
                   08h30 / 18h30
                 </span>
-              </div>
-              <div>
+              </p>
+              <p>
                 <span className="font-content font-bold text-xs text-brand-fg-accent">
                   Sam :{" "}
                 </span>
-                <span className="font-content font-normal text-xs text-primary-raised">
+                <span className="font-content font-bold text-xs text-primary-raised">
                   09h00 / 12h30
                 </span>
-              </div>
-              <div>
+              </p>
+              <p>
                 <span className="font-content font-bold text-xs text-brand-fg-accent">
                   Dim :{" "}
                 </span>
-                <span className="font-content font-normal text-xs text-primary-raised">
+                <span className="font-content font-bold text-xs text-primary-raised">
                   Fermé
                 </span>
-              </div>
+              </p>
             </div>
 
             {/* CTA */}

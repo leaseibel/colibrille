@@ -9,25 +9,25 @@ const prestations = [
   {
     title: "Nettoyage intérieur/extérieur",
     description:
-      "Redonnez de l'éclat et du confort durable à votre véhicule...",
+      "Redonnez de l'éclat et un confort durable à votre véhicule grâce à nos prestations complètes de nettoyage. Nous traitons chaque recoin avec minutie pour vous offrir un habitacle sain et une carrosserie parfaitement propre.",
     href: "/nos-prestations",
   },
   {
     title: "Rénovation de la carrosserie",
     description:
-      "Valorisez votre patrimoine automobile en lui redonnant une apparence proche du neuf...",
+      "Valorisez votre patrimoine automobile en lui redonnant une apparence proche du neuf. Grâce à nos techniques de polissage professionnel, nous supprimons les micro-rayures pour raviver la brillance de votre peinture.",
     href: "/nos-prestations",
   },
   {
     title: "Rénovation des cuirs",
     description:
-      "Le nettoyage en profondeur et la réparation des imperfections extérieures...",
+      "Le nettoyage en profondeur et la réparation des imperfections permettent de prolonger la durée de vie de votre intérieur. Nous nourrissons vos selleries pour leur redonner souplesse et couleur, tout en gagnant en confort.",
     href: "/nos-prestations",
   },
   {
     title: "Protection céramique",
     description:
-      "Protégez durablement votre carrosserie contre les agressions extérieures...",
+      "Protégez durablement votre carrosserie contre les agressions extérieures, les UV et contaminants. Cette barrière hydrophobe renforce la brillance de votre véhicule, préserve sa peinture et facilite ses futurs entretiens réguliers.",
     href: "/nos-prestations",
   },
 ];
@@ -36,7 +36,7 @@ const testimonials = [
   {
     author: "Laeticia",
     quote:
-      "La minutie de Corentin et sa passion pour les automobiles se sentent dès le premier contact...",
+      "La minutie de Corentin et sa passion pour les automobiles se sentent dès le premier contact. Je n'ai pas hésité à lui laisser mon véhicule pour un nettoyage intérieur et extérieur. J'ai été bluffée par le résultat! Je recommande les yeux fermés.",
   },
   {
     author: "Bastien",
@@ -46,7 +46,7 @@ const testimonials = [
   {
     author: "Jean-Jacques",
     quote:
-      "J'ai confié mon véhicule à l'entreprise Colibrille, que j'ai récemment découverte...",
+      "J'ai confié mon véhicule à l'entreprise Colibrille, que j'ai récemment découverte. Située à côté de chez moi, ce fut très pratique de déposer mon véhicule le matin pour le récupérer le soir. J'ai été très surpris par la qualité de la prestation. Merci au gérant pour son accueil chaleureux.",
   },
 ];
 
@@ -55,6 +55,7 @@ export default function Home() {
     <>
       {/* SECTION 1: HERO */}
       <section
+        className="hero-section"
         style={{
           position: 'relative',
           overflow: 'hidden',
@@ -136,7 +137,7 @@ export default function Home() {
                 letterSpacing: '1.2px',
                 textTransform: 'uppercase',
                 width: '100%',
-                whiteSpace: 'nowrap',
+                whiteSpace: 'normal',
               }}>
                 <span>Nettoyage</span>
                 <span>• Rénovation •</span>
@@ -186,31 +187,45 @@ export default function Home() {
       </section>
 
       {/* SECTION 2: NOS PRESTATIONS */}
-      <section className="flex w-full flex-col items-center bg-primary-base px-24 py-40">
+      <section className="section-outer flex w-full flex-col items-center bg-primary-base py-40">
         <SectionHeading title="Nos Prestations" />
 
-        <div className="grid w-full max-w-container grid-cols-1 gap-20 md:grid-cols-2">
-          {prestations.map((item) => (
-            <PrestationSummary
-              key={item.title}
-              title={item.title}
-              description={item.description}
-              href={item.href}
-            />
-          ))}
+        <div className="flex w-full max-w-container flex-wrap gap-20">
+          <div className="prestation-row">
+            {prestations.slice(0, 2).map((item) => (
+              <Card key={item.title} variant="raised" className="prestation-card p-8">
+                <PrestationSummary
+                  title={item.title}
+                  description={item.description}
+                  href={item.href}
+                />
+              </Card>
+            ))}
+          </div>
+          <div className="prestation-row">
+            {prestations.slice(2, 4).map((item) => (
+              <Card key={item.title} variant="raised" className="prestation-card p-8">
+                <PrestationSummary
+                  title={item.title}
+                  description={item.description}
+                  href={item.href}
+                />
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* SECTION 3: EPIGRAPH BANNER */}
-      <EpigraphBanner />
+      <EpigraphBanner className="section-outer" />
 
       {/* SECTION 4: ILS NOUS RECOMMANDENT */}
-      <section className="flex w-full flex-col items-center bg-gradient-to-b from-primitive-green-800 to-primitive-green-900 px-24 py-40">
+      <section className="section-outer flex w-full flex-col items-center bg-gradient-to-b from-primitive-green-800 to-primitive-green-900 py-40">
         <SectionHeading title="Ils nous recommandent" inverted />
 
-        <div className="flex w-full max-w-container flex-wrap justify-center gap-20 pb-24">
+        <div className="flex w-full max-w-container flex-wrap items-start justify-center gap-20 pb-24">
           {testimonials.map((t) => (
-            <Card key={t.author} variant="glass" className="p-24">
+            <Card key={t.author} variant="glass" className="min-w-[280px] max-w-full flex-[1_0_280px] p-24">
               <Testimonial author={t.author} quote={t.quote} />
             </Card>
           ))}
