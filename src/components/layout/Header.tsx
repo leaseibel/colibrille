@@ -10,6 +10,7 @@ import Drawer from "@/components/Drawer";
 
 type HeaderProps = {
   className?: string;
+  phone?: string;
 };
 
 export default function Header({ className }: HeaderProps) {

@@ -10,8 +10,11 @@ import { Footer, PageHero, SectionHeading } from "@/components/layout";
 import { ContactCTASection, Step } from "@/components/specific";
 import Card from "@/components/Card";
 import FullWidthSection from "@/components/FullWidthSection";
+import { reader } from "@/lib/keystatic-reader";
+import { DocumentRenderer } from "@keystatic/core/renderer";
 
-export default function NosTarifs() {
+export default async function NosTarifs() {
+  const tarifs = await reader.singletons.tarifsContent.read();
   return (
     <>
       <PageHero
@@ -23,29 +26,37 @@ export default function NosTarifs() {
       {/* Section 1: Pourquoi nous rencontrer */}
       <section className="section-outer bg-primary-base pt-24">
         <FullWidthSection
-          trailingPicture="/assets/images/tarifs/corentin.jpg"
+          trailingPicture={tarifs?.photo ?? "/assets/images/tarifs/corentin.jpg"}
           trailingPictureAlt="Corentin, fondateur de Colibrille"
         >
           <h2 className="w-full pb-16 font-display font-bold text-md tracking-[1px]">
             Pourquoi nous avons besoin de vous rencontrer ?
           </h2>
-          <p className="w-full pb-16 font-content font-normal text-xs">
-            Chez Colibrille, nous avons fait le choix de ne pas proposer de
-            forfaits standardisés, contrairement à de nombreux acteurs du
-            domaine du detailing automobile. Pourquoi ? Parce que chaque véhicule
-            est unique, tout comme les attentes, les besoins, et les exigences de
-            son propriétaire.
-          </p>
-          <p className="w-full pb-16 font-content font-normal text-xs">
-            L&apos;état général du véhicule, son utilisation, son kilométrage,
-            les matériaux présents à l&apos;intérieur ou encore le niveau de
-            résultat souhaité sont autant de facteurs qui influencent le travail
-            à réaliser.
-          </p>
-          <p className="w-full font-content font-bold text-xs">
-            C&apos;est pourquoi nous privilégions une approche entièrement
-            personnalisée et sur mesure.
-          </p>
+          {tarifs?.content ? (
+            <div className="keystatic-content w-full">
+              <DocumentRenderer document={await tarifs.content()} />
+            </div>
+          ) : (
+            <>
+              <p className="w-full pb-16 font-content font-normal text-xs">
+                Chez Colibrille, nous avons fait le choix de ne pas proposer de
+                forfaits standardisés, contrairement à de nombreux acteurs du
+                domaine du detailing automobile. Pourquoi ? Parce que chaque véhicule
+                est unique, tout comme les attentes, les besoins, et les exigences de
+                son propriétaire.
+              </p>
+              <p className="w-full pb-16 font-content font-normal text-xs">
+                L&apos;état général du véhicule, son utilisation, son kilométrage,
+                les matériaux présents à l&apos;intérieur ou encore le niveau de
+                résultat souhaité sont autant de facteurs qui influencent le travail
+                à réaliser.
+              </p>
+              <p className="w-full font-content font-bold text-xs">
+                C&apos;est pourquoi nous privilégions une approche entièrement
+                personnalisée et sur mesure.
+              </p>
+            </>
+          )}
         </FullWidthSection>
       </section>
 

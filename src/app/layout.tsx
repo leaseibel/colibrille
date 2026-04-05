@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat, Petrona } from "next/font/google";
-import { Header } from "@/components/layout";
+import { HeaderWrapper } from "@/components/layout";
 import "./globals.css";
 
 const inter = Inter({
@@ -103,7 +103,7 @@ export default function RootLayout({
         >
           Aller au contenu principal
         </a>
-        <Header />
+        <HeaderWrapper />
         <main id="main-content">{children}</main>
       </body>
     </html>

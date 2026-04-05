@@ -7,10 +7,14 @@ export const metadata: Metadata = {
     "Plan du site colibrille.fr - Toutes les pages de votre atelier de detailing automobile à Aytré.",
 };
 import { ContactCTASection } from "@/components/specific";
+import { reader } from "@/lib/keystatic-reader";
+import { DocumentRenderer } from "@keystatic/core/renderer";
 
 const linkClass = "font-content font-medium text-sm text-ghost-foreground underline pb-16 block";
 
-export default function PlanDuSite() {
+export default async function PlanDuSite() {
+  const page = await reader.singletons.planDuSite.read();
+
   return (
     <>
       <PageHero />
@@ -18,6 +22,12 @@ export default function PlanDuSite() {
         <SectionHeading title="Plan du site" />
 
         <div className="flex w-full max-w-content flex-col items-center">
+          {page?.content ? (
+            <div className="keystatic-content w-full">
+              <DocumentRenderer document={await page.content()} />
+            </div>
+          ) : (
+          <>
           <p className="w-full pb-16 font-content font-bold text-sm">
             Pages principales
           </p>
@@ -83,6 +93,8 @@ export default function PlanDuSite() {
           <a href="/plan-du-site" className={linkClass}>
             Plan du site
           </a>
+          </>
+          )}
         </div>
       </section>
 

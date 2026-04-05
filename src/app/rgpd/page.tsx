@@ -7,8 +7,12 @@ export const metadata: Metadata = {
     "Politique de confidentialité et protection des données personnelles (RGPD) - Colibrille.",
 };
 import { ContactCTASection } from "@/components/specific";
+import { reader } from "@/lib/keystatic-reader";
+import { DocumentRenderer } from "@keystatic/core/renderer";
 
-export default function RGPD() {
+export default async function RGPD() {
+  const page = await reader.singletons.rgpd.read();
+
   return (
     <>
       <PageHero />
@@ -17,6 +21,12 @@ export default function RGPD() {
 
         <div className="flex w-full max-w-container flex-col items-center">
           <div className="w-full max-w-content">
+            {page?.content ? (
+              <div className="keystatic-content">
+                <DocumentRenderer document={await page.content()} />
+              </div>
+            ) : (
+            <>
             <p className="pb-16 font-content font-normal text-xs text-ghost-foreground">
               <strong className="font-bold">
                 1. Responsable du traitement
@@ -83,6 +93,8 @@ export default function RGPD() {
               Pour toute question relative à la protection de vos données :
               atelier.colibrille.17@gmail.com
             </p>
+            </>
+            )}
           </div>
         </div>
       </section>

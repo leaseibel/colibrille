@@ -7,8 +7,12 @@ export const metadata: Metadata = {
     "Mentions légales du site colibrille.fr - Atelier de detailing automobile à Aytré.",
 };
 import { ContactCTASection } from "@/components/specific";
+import { reader } from "@/lib/keystatic-reader";
+import { DocumentRenderer } from "@keystatic/core/renderer";
 
-export default function MentionsLegales() {
+export default async function MentionsLegales() {
+  const page = await reader.singletons.mentionsLegales.read();
+
   return (
     <>
       <PageHero />
@@ -17,6 +21,12 @@ export default function MentionsLegales() {
 
         <div className="flex w-full max-w-container flex-col items-center">
           <div className="w-full max-w-content">
+            {page?.content ? (
+              <div className="keystatic-content">
+                <DocumentRenderer document={await page.content()} />
+              </div>
+            ) : (
+            <>
             <p className="pb-16 font-content font-normal text-xs text-ghost-foreground">
               <strong className="font-bold">
                 Éditeur du site Le site colibrille.fr est édité par :
@@ -88,6 +98,8 @@ export default function MentionsLegales() {
                 atelier.colibrille.17@gmail.com
               </a>
             </p>
+            </>
+            )}
           </div>
         </div>
       </section>

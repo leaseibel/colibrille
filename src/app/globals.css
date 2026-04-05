@@ -437,6 +437,30 @@ body {
   top: 0;
 }
 
+/* Keystatic DocumentRenderer content styles */
+.keystatic-content p {
+  margin-bottom: var(--layout-gap-400);
+  font-size: var(--font-size-xs);
+  line-height: var(--font-line-height-xs);
+}
+.keystatic-content h2 {
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-md);
+  letter-spacing: 1px;
+  margin-bottom: var(--layout-gap-400);
+}
+.keystatic-content h3 {
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.8px;
+  margin-bottom: var(--layout-gap-200);
+}
+.keystatic-content strong { font-weight: var(--font-weight-bold); }
+.keystatic-content ul { list-style-type: disc; padding-left: 1.5em; }
+.keystatic-content li { margin-bottom: var(--layout-gap-100); }
+
 @layer base {
   html {
     background-color: var(--color-surface-brand-background-base);

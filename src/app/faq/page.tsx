@@ -8,10 +8,23 @@ export const metadata: Metadata = {
 };
 import { ContactCTASection } from "@/components/specific";
 import FullWidthSection from "@/components/FullWidthSection";
+import { reader } from "@/lib/keystatic-reader";
+import { DocumentRenderer } from "@keystatic/core/renderer";
 
 const CTA_HREF = "#contact-cta";
 
-export default function FAQ() {
+export default async function FAQ() {
+  const faqSlugs = await reader.collections.faq.list();
+  const cmsFaqItems = await Promise.all(
+    faqSlugs.map(async (slug) => {
+      const item = await reader.collections.faq.read(slug);
+      return item ? { ...item, slug } : null;
+    })
+  );
+  const faqItems = cmsFaqItems
+    .filter((item): item is NonNullable<typeof item> => item !== null)
+    .sort((a, b) => (a.order ?? 999) - (b.order ?? 999));
+
   return (
     <>
       <PageHero
@@ -20,6 +33,19 @@ export default function FAQ() {
       />
 
       <section className="section-outer flex flex-col items-center gap-2 bg-primary-base pt-24 pb-40">
+        {faqItems.length > 0 ? (
+          faqItems.map(async (item) => (
+            <FullWidthSection key={item.slug} withCallToAction ctaLabel="En savoir plus" ctaHref={CTA_HREF}>
+              <h6 className="w-full pb-16 font-display font-bold text-md tracking-[1px]">
+                {item.question}
+              </h6>
+              <div className="keystatic-content w-full">
+                <DocumentRenderer document={await item.answer()} />
+              </div>
+            </FullWidthSection>
+          ))
+        ) : (
+        <>
         {/* FAQ 1 */}
         <FullWidthSection withCallToAction ctaLabel="En savoir plus" ctaHref={CTA_HREF}>
           <h6 className="w-full pb-16 font-display font-bold text-md tracking-[1px]">
@@ -212,6 +238,8 @@ export default function FAQ() {
             réseaux de bus si vous résidez à La Rochelle (ligne Illico 1).
           </p>
         </FullWidthSection>
+        </>
+        )}
       </section>
 
       <ContactCTASection />

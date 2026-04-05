@@ -5,6 +5,7 @@ import Card from "@/components/Card";
 import Logo from "@/components/Logo";
 import { Footer, SectionHeading } from "@/components/layout";
 import { EpigraphBanner, FeedbackButton, PrestationSummary, Testimonial } from "@/components/specific";
+import { reader } from "@/lib/keystatic-reader";
 
 export const metadata: Metadata = {
   title: "Colibrille | Detailing Automobile à Aytré",
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     "Atelier de detailing automobile professionnel à Aytré. Nettoyage, polissage, protection céramique et rénovation de cuirs. Devis gratuit sur rendez-vous.",
 };
 
-const prestations = [
+const defaultPrestations = [
   {
     title: "Nettoyage intérieur/extérieur",
     description:
@@ -39,7 +40,7 @@ const prestations = [
   },
 ];
 
-const testimonials = [
+const defaultTestimonials = [
   {
     author: "Laeticia",
     quote:
@@ -57,7 +58,37 @@ const testimonials = [
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+  // Hero
+  const hero = await reader.singletons.heroContent.read();
+  const subtitle = hero?.subtitle ?? 'Votre nouveau centre d\u2019esthétique automobile sur Aytré (17).';
+
+  // Testimonials
+  const testimonialSlugs = await reader.collections.testimonials.list();
+  const cmsTestimonials = await Promise.all(
+    testimonialSlugs.map((slug) => reader.collections.testimonials.read(slug))
+  );
+  const testimonials = cmsTestimonials.length > 0
+    ? cmsTestimonials
+        .filter((t): t is NonNullable<typeof t> => t !== null)
+        .map((t) => ({ author: t.author, quote: t.content }))
+    : defaultTestimonials;
+
+  // Landing prestations
+  const lpSlugs = await reader.collections.landingPrestations.list();
+  const cmsLandingPrestations = await Promise.all(
+    lpSlugs.map((slug) => reader.collections.landingPrestations.read(slug))
+  );
+  const prestations = cmsLandingPrestations.length > 0
+    ? cmsLandingPrestations
+        .filter((p): p is NonNullable<typeof p> => p !== null)
+        .map((p) => ({
+          title: p.title,
+          description: p.summary,
+          href: `/nos-prestations${p.link}`,
+        }))
+    : defaultPrestations;
+
   return (
     <>
       {/* SECTION 1: HERO */}
@@ -157,7 +188,7 @@ export default function Home() {
                 lineHeight: 'var(--font-line-height-xs)',
                 width: '100%',
               }}>
-                Votre nouveau centre d&apos;esthétique automobile sur Aytré (17).
+                {subtitle}
               </p>
             </div>
 

@@ -7,8 +7,12 @@ export const metadata: Metadata = {
     "Conditions générales de vente et d'utilisation - Colibrille, atelier de detailing automobile.",
 };
 import { ContactCTASection } from "@/components/specific";
+import { reader } from "@/lib/keystatic-reader";
+import { DocumentRenderer } from "@keystatic/core/renderer";
 
-export default function CGVCGU() {
+export default async function CGVCGU() {
+  const page = await reader.singletons.cgvCgu.read();
+
   return (
     <>
       <PageHero />
@@ -17,6 +21,12 @@ export default function CGVCGU() {
 
         <div className="flex w-full max-w-container flex-col items-center">
           <div className="w-full max-w-content">
+            {page?.content ? (
+              <div className="keystatic-content">
+                <DocumentRenderer document={await page.content()} />
+              </div>
+            ) : (
+            <>
             {/* CGV Section Title */}
             <h4 className="pt-16 pb-8 font-display font-bold text-sm tracking-[0.8px]">
               Conditions Générales de Vente (CGV)
@@ -126,6 +136,8 @@ export default function CGVCGU() {
               Les présentes CGV/CGU sont soumises au droit français. En cas de
               litige, les tribunaux français sont seuls compétents.
             </p>
+            </>
+            )}
           </div>
         </div>
       </section>

@@ -1,8 +1,12 @@
 import { SectionHeading } from "@/components/layout";
 import Button from "@/components/Button";
 import { PaymentMethodsBanner } from "@/components/specific";
+import { getSettings } from "@/lib/settings";
 
-export default function ContactCTASection() {
+export default async function ContactCTASection() {
+  const settings = await getSettings();
+  const telHref = `tel:+33${settings.phone.replace(/\s/g, '').replace(/^0/, '')}`;
+
   return (
     <section
       id="contact-cta"
@@ -31,10 +35,10 @@ export default function ContactCTASection() {
 
           <Button
             variant="secondary"
-            href="tel:+33611489861"
+            href={telHref}
             className="shrink-0"
           >
-            Appelez le 06 11 48 98 61
+            Appelez le {settings.phone}
           </Button>
 
           <PaymentMethodsBanner />
