@@ -94,7 +94,7 @@ export default async function APropos() {
                   style={{
                     position: "relative",
                     width: "100%",
-                    aspectRatio: "299 / 212",
+                    aspectRatio: "3 / 4",
                     overflow: "hidden",
                     borderRadius: "var(--border-radius-atom)",
                   }}
