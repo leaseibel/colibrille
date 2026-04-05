@@ -1,1 +1,89 @@
-{}
+{
+  "content": {
+    "document": [
+      {
+        "type": "paragraph",
+        "children": [{ "text": "Éditeur du site Le site colibrille.fr est édité par :", "bold": true }]
+      },
+      {
+        "type": "paragraph",
+        "children": [{ "text": "Colibrille – Esthétique Automobile" }]
+      },
+      {
+        "type": "paragraph",
+        "children": [{ "text": "Entreprise individuelle" }]
+      },
+      {
+        "type": "paragraph",
+        "children": [{ "text": "2 rue Le Verrier, 17440 Aytré" }]
+      },
+      {
+        "type": "paragraph",
+        "children": [{ "text": "Téléphone : +33 6 11 48 98 61" }]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          { "text": "Email : " },
+          { "type": "link", "href": "mailto:atelier.colibrille.17@gmail.com", "children": [{ "text": "atelier.colibrille.17@gmail.com" }] }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [{ "text": "SIRET : 100 817 677 844 48" }]
+      },
+      {
+        "type": "paragraph",
+        "children": [{ "text": "Responsable de publication : Corentin Seibel" }]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          { "text": "Hébergeur : ", "bold": true },
+          { "text": "Ce site est hébergé par :" }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [{ "text": "[NOM DE L'HÉBERGEUR]" }]
+      },
+      {
+        "type": "paragraph",
+        "children": [{ "text": "[ADRESSE DE L'HÉBERGEUR]" }]
+      },
+      {
+        "type": "paragraph",
+        "children": [{ "text": "[SITE WEB DE L'HÉBERGEUR]" }]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          { "text": "Propriété intellectuelle : ", "bold": true },
+          { "text": "L'ensemble des contenus présents sur ce site (textes, images, logos, graphismes) est la propriété exclusive de Colibrille, sauf mentions contraires. Toute reproduction, distribution ou utilisation sans autorisation préalable est interdite." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          { "text": "Liens hypertextes : ", "bold": true },
+          { "text": "Colibrille décline toute responsabilité quant au contenu des sites externes vers lesquels des liens peuvent pointer." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          { "text": "Données personnelles : ", "bold": true },
+          { "text": "Pour toute information relative au traitement de vos données personnelles, consultez notre Politique de confidentialité (RGPD)." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          { "text": "Contact : ", "bold": true },
+          { "text": "Pour toute question relative au site : " },
+          { "type": "link", "href": "mailto:atelier.colibrille.17@gmail.com", "children": [{ "text": "atelier.colibrille.17@gmail.com" }] }
+        ]
+      }
+    ]
+  }
+}

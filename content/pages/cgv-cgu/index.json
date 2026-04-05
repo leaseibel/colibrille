@@ -3,90 +3,101 @@
     "document": [
       {
         "type": "heading",
-        "level": 2,
+        "level": 4,
         "children": [{ "text": "Conditions Générales de Vente (CGV)" }]
       },
       {
         "type": "paragraph",
-        "children": [
-          { "text": "1. Objet", "bold": true },
-          { "text": "\nLes présentes Conditions Générales de Vente régissent les relations contractuelles entre Colibrille (Corentin Seibel, entreprise individuelle) et ses clients dans le cadre des prestations de detailing automobile." }
-        ]
+        "children": [{ "text": "1. Objet", "bold": true }]
       },
       {
         "type": "paragraph",
-        "children": [
-          { "text": "2. Devis et commande", "bold": true },
-          { "text": "\nToute prestation fait l'objet d'un devis préalable, établi après diagnostic du véhicule. Le devis est valable 30 jours. La confirmation de la prestation est effectuée par la signature du devis et le versement d'un acompte de 30%." }
-        ]
+        "children": [{ "text": "Les présentes Conditions Générales de Vente régissent les relations contractuelles entre Colibrille (Corentin Seibel, entreprise individuelle) et ses clients dans le cadre des prestations de detailing automobile." }]
       },
       {
         "type": "paragraph",
-        "children": [
-          { "text": "3. Tarifs", "bold": true },
-          { "text": "\nLes tarifs sont indiqués hors taxes sur le devis. Colibrille est soumis au régime de la franchise en base de TVA (article 293B du CGI). Les prix peuvent être révisés sans préavis." }
-        ]
+        "children": [{ "text": "2. Devis et commande", "bold": true }]
       },
       {
         "type": "paragraph",
-        "children": [
-          { "text": "4. Paiement", "bold": true },
-          { "text": "\nLe solde de 70% est exigible à la restitution du véhicule. Les moyens de paiement acceptés sont : carte bancaire, virement instantané, chèque. Tout retard de paiement entraîne des pénalités au taux légal en vigueur." }
-        ]
+        "children": [{ "text": "Toute prestation fait l'objet d'un devis préalable, établi après diagnostic du véhicule. Le devis est valable 30 jours. La confirmation de la prestation est effectuée par la signature du devis et le versement d'un acompte de 30%." }]
       },
       {
         "type": "paragraph",
-        "children": [
-          { "text": "5. Restitution du véhicule", "bold": true },
-          { "text": "\nUn tour complet du véhicule est effectué avec le client lors de la restitution afin de valider la prestation. Le client dispose de 7 jours pour signaler tout défaut lié à notre intervention." }
-        ]
+        "children": [{ "text": "3. Tarifs", "bold": true }]
       },
       {
         "type": "paragraph",
-        "children": [
-          { "text": "6. Responsabilité", "bold": true },
-          { "text": "\nColibrille s'engage à réaliser les prestations avec soin et professionnalisme. Notre responsabilité ne peut être engagée en cas de dommages préexistants non signalés, ou résultant d'une utilisation ou d'un entretien inadapté après la prestation." }
-        ]
+        "children": [{ "text": "Les tarifs sont indiqués hors taxes sur le devis. Colibrille est soumis au régime de la franchise en base de TVA (article 293B du CGI). Les prix peuvent être révisés sans préavis." }]
       },
       {
         "type": "paragraph",
-        "children": [
-          { "text": "7. Annulation", "bold": true },
-          { "text": "\nToute annulation moins de 48h avant le rendez-vous pourra entraîner la retenue de l'acompte versé." }
-        ]
+        "children": [{ "text": "4. Paiement", "bold": true }]
+      },
+      {
+        "type": "paragraph",
+        "children": [{ "text": "Le solde de 70% est exigible à la restitution du véhicule. Les moyens de paiement acceptés sont : carte bancaire, virement instantané, chèque. Tout retard de paiement entraîne des pénalités au taux légal en vigueur." }]
+      },
+      {
+        "type": "paragraph",
+        "children": [{ "text": "5. Restitution du véhicule", "bold": true }]
+      },
+      {
+        "type": "paragraph",
+        "children": [{ "text": "Un tour complet du véhicule est effectué avec le client lors de la restitution afin de valider la prestation. Le client dispose de 7 jours pour signaler tout défaut lié à notre intervention." }]
+      },
+      {
+        "type": "paragraph",
+        "children": [{ "text": "6. Responsabilité", "bold": true }]
+      },
+      {
+        "type": "paragraph",
+        "children": [{ "text": "Colibrille s'engage à réaliser les prestations avec soin et professionnalisme. Notre responsabilité ne peut être engagée en cas de dommages préexistants non signalés, ou résultant d'une utilisation ou d'un entretien inadapté après la prestation." }]
+      },
+      {
+        "type": "paragraph",
+        "children": [{ "text": "7. Annulation", "bold": true }]
+      },
+      {
+        "type": "paragraph",
+        "children": [{ "text": "Toute annulation moins de 48h avant le rendez-vous pourra entraîner la retenue de l'acompte versé." }]
       },
       {
         "type": "heading",
-        "level": 2,
+        "level": 4,
         "children": [{ "text": "Conditions Générales d'Utilisation (CGU)" }]
       },
       {
         "type": "paragraph",
-        "children": [
-          { "text": "1. Accès au site", "bold": true },
-          { "text": "\nL'accès au site colibrille.fr est gratuit. Colibrille se réserve le droit de modifier, suspendre ou interrompre l'accès au site à tout moment sans préavis." }
-        ]
+        "children": [{ "text": "1. Accès au site", "bold": true }]
       },
       {
         "type": "paragraph",
-        "children": [
-          { "text": "2. Contenu", "bold": true },
-          { "text": "\nLes informations présentes sur ce site sont données à titre indicatif. Colibrille s'efforce de les maintenir à jour mais ne peut garantir leur exactitude exhaustive." }
-        ]
+        "children": [{ "text": "L'accès au site colibrille.fr est gratuit. Colibrille se réserve le droit de modifier, suspendre ou interrompre l'accès au site à tout moment sans préavis." }]
       },
       {
         "type": "paragraph",
-        "children": [
-          { "text": "3. Propriété intellectuelle", "bold": true },
-          { "text": "\nTous les contenus du site (textes, images, logo) sont protégés. Toute reproduction sans autorisation est interdite." }
-        ]
+        "children": [{ "text": "2. Contenu", "bold": true }]
       },
       {
         "type": "paragraph",
-        "children": [
-          { "text": "4. Droit applicable", "bold": true },
-          { "text": "\nLes présentes CGV/CGU sont soumises au droit français. En cas de litige, les tribunaux français sont seuls compétents." }
-        ]
+        "children": [{ "text": "Les informations présentes sur ce site sont données à titre indicatif. Colibrille s'efforce de les maintenir à jour mais ne peut garantir leur exactitude exhaustive." }]
+      },
+      {
+        "type": "paragraph",
+        "children": [{ "text": "3. Propriété intellectuelle", "bold": true }]
+      },
+      {
+        "type": "paragraph",
+        "children": [{ "text": "Tous les contenus du site (textes, images, logo) sont protégés. Toute reproduction sans autorisation est interdite." }]
+      },
+      {
+        "type": "paragraph",
+        "children": [{ "text": "4. Droit applicable", "bold": true }]
+      },
+      {
+        "type": "paragraph",
+        "children": [{ "text": "Les présentes CGV/CGU sont soumises au droit français. En cas de litige, les tribunaux français sont seuls compétents." }]
       }
     ]
   }
