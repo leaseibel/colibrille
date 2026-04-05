@@ -68,43 +68,33 @@ export default async function Home() {
   const subtitle = hero?.subtitle ?? 'Votre nouveau centre d\u2019esthétique automobile sur Aytré (17).';
 
   // Testimonials
-  const testimonialSlugs = await reader.collections.testimonials.list();
-  const cmsTestimonials = await Promise.all(
-    testimonialSlugs.map((slug) => reader.collections.testimonials.read(slug))
-  );
-  const testimonials = cmsTestimonials.length > 0
-    ? cmsTestimonials
-        .filter((t): t is NonNullable<typeof t> => t !== null)
-        .map((t) => ({ author: t.author, quote: t.content }))
+  const testimonialsData = await reader.singletons.testimonialsContent.read();
+  const testimonials = testimonialsData?.items && testimonialsData.items.length > 0
+    ? testimonialsData.items.map((t) => ({ author: t.author, quote: t.content }))
     : defaultTestimonials;
 
   // Prestation images from Keystatic
-  const prestationSlugs = ['nettoyage', 'carrosserie', 'cuirs', 'ceramique'] as const;
+  const knownSlugs = ['nettoyage', 'carrosserie', 'cuirs', 'ceramique'] as const;
   const cmsPrestations = await Promise.all(
-    prestationSlugs.map((slug) => reader.collections.prestations.read(slug))
+    knownSlugs.map((slug) => reader.collections.prestations.read(slug))
   );
   const prestationImages: Record<string, string> = {};
-  prestationSlugs.forEach((slug, i) => {
+  knownSlugs.forEach((slug, i) => {
     const img = cmsPrestations[i]?.image;
     prestationImages[slug] = img && img !== 'null'
       ? `/assets/images/prestations/${img}`
       : `/assets/images/prestations/${slug}.jpg`;
   });
 
-  // Landing prestations
-  const lpSlugs = await reader.collections.landingPrestations.list();
-  const cmsLandingPrestations = await Promise.all(
-    lpSlugs.map((slug) => reader.collections.landingPrestations.read(slug))
-  );
-  const prestations = cmsLandingPrestations.length > 0
-    ? cmsLandingPrestations
-        .filter((p): p is NonNullable<typeof p> => p !== null)
-        .map((p) => ({
-          title: p.title,
-          description: p.summary,
-          href: `/nos-prestations${p.link}`,
-          imageSrc: prestationImages[p.slug] ?? `/assets/images/prestations/${p.slug}.jpg`,
-        }))
+  // Landing prestations (ordered)
+  const orderData = await reader.singletons.prestationsOrder.read();
+  const prestations = orderData?.items && orderData.items.length > 0
+    ? orderData.items.map((item) => ({
+        title: cmsPrestations[knownSlugs.indexOf(item.slug as typeof knownSlugs[number])]?.title ?? item.slug,
+        description: item.summary,
+        href: `/nos-prestations#${item.slug}`,
+        imageSrc: prestationImages[item.slug] ?? `/assets/images/prestations/${item.slug}.jpg`,
+      }))
     : defaultPrestations;
 
   return (

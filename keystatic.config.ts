@@ -13,10 +13,10 @@ export default config({
     brand: { name: 'Colibrille' },
     navigation: {
       'Informations générales': ['settings'],
-      'Landing page': ['heroContent', 'testimonials', 'landingPrestations'],
+      'Landing page': ['heroContent', 'testimonialsContent', 'prestationsOrder'],
       'Nos Prestations': ['prestations'],
       'Nos Tarifs': ['tarifsContent'],
-      'À Propos': ['aproposContent', 'certifications'],
+      'À Propos': ['aproposContent', 'certificationsOrder'],
       'FAQ': ['faq'],
       'Pages annexes': ['mentionsLegales', 'rgpd', 'cgvCgu', 'planDuSite'],
     }
@@ -107,6 +107,60 @@ export default config({
       }
     }),
 
+    testimonialsContent: singleton({
+      label: 'Avis clients',
+      path: 'content/testimonials-list/',
+      format: { data: 'json' },
+      schema: {
+        items: fields.array(
+          fields.object({
+            author: fields.text({ label: 'Auteur' }),
+            rating: fields.select({
+              label: 'Note',
+              defaultValue: '5',
+              options: [
+                { value: '5', label: '⭐⭐⭐⭐⭐ 5/5' },
+                { value: '4', label: '⭐⭐⭐⭐ 4/5' },
+                { value: '3', label: '⭐⭐⭐ 3/5' },
+              ]
+            }),
+            content: fields.text({ label: 'Texte de l\'avis', multiline: true }),
+          }),
+          {
+            label: 'Avis',
+            itemLabel: (props) => props.fields.author.value || 'Avis client',
+          }
+        ),
+      }
+    }),
+
+    prestationsOrder: singleton({
+      label: 'Nos Prestations — ordre et résumés landing',
+      path: 'content/prestations-order/',
+      format: { data: 'json' },
+      schema: {
+        items: fields.array(
+          fields.object({
+            slug: fields.select({
+              label: 'Prestation',
+              defaultValue: 'nettoyage',
+              options: [
+                { value: 'nettoyage', label: 'Nettoyage intérieur/extérieur' },
+                { value: 'carrosserie', label: 'Rénovation de la carrosserie' },
+                { value: 'cuirs', label: 'Rénovation des cuirs' },
+                { value: 'ceramique', label: 'Protection céramique' },
+              ]
+            }),
+            summary: fields.text({ label: 'Résumé (landing page)', multiline: true }),
+          }),
+          {
+            label: 'Prestation',
+            itemLabel: (props) => props.fields.slug.value || 'Prestation',
+          }
+        ),
+      }
+    }),
+
     tarifsContent: singleton({
       label: 'Nos Tarifs — Card "Pourquoi nous rencontrer"',
       path: 'content/tarifs/',
@@ -157,6 +211,28 @@ export default config({
           multiline: true,
           defaultValue: 'Nous sommes situés sur la parcelle...',
         }),
+      }
+    }),
+
+    certificationsOrder: singleton({
+      label: 'Diplômes et certifications',
+      path: 'content/certifications-order/',
+      format: { data: 'json' },
+      schema: {
+        items: fields.array(
+          fields.object({
+            title: fields.text({ label: 'Titre du diplôme' }),
+            image: fields.image({
+              label: 'Image',
+              directory: 'public/assets/images/a-propos',
+              publicPath: '/assets/images/a-propos/',
+            }),
+          }),
+          {
+            label: 'Certification',
+            itemLabel: (props) => props.fields.title.value || 'Certification',
+          }
+        ),
       }
     }),
 
@@ -218,31 +294,7 @@ export default config({
 
   collections: {
 
-    // ─── AVIS (LANDING) ───────────────────────────────────
-    testimonials: collection({
-      label: 'Avis clients',
-      path: 'content/testimonials/*',
-      slugField: 'author',
-      format: { data: 'json' },
-      schema: {
-        author: fields.slug({ name: { label: 'Auteur' } }),
-        rating: fields.select({
-          label: 'Note',
-          defaultValue: '5',
-          options: [
-            { value: '5', label: '⭐⭐⭐⭐⭐ 5/5' },
-            { value: '4', label: '⭐⭐⭐⭐ 4/5' },
-            { value: '3', label: '⭐⭐⭐ 3/5' },
-          ]
-        }),
-        content: fields.text({
-          label: 'Texte de l\'avis',
-          multiline: true,
-        }),
-      }
-    }),
-
-    // ─── PRESTATIONS ──────────────────────────────────────
+    // ─── PRESTATIONS (contenu détaillé) ───────────────────
     prestations: collection({
       label: 'Nos Prestations',
       path: 'content/prestations/*',
@@ -259,46 +311,6 @@ export default config({
         content: fields.document({
           label: 'Contenu',
           formatting: true,
-        }),
-        order: fields.integer({
-          label: 'Ordre d\'affichage',
-          defaultValue: 1,
-          validation: { isRequired: true, min: 1 },
-        }),
-      }
-    }),
-
-    // ─── LANDING PRESTATIONS SUMMARY ──────────────────────
-    landingPrestations: collection({
-      label: 'Landing — Résumés des prestations',
-      path: 'content/landing-prestations/*',
-      slugField: 'slug',
-      format: { data: 'json' },
-      schema: {
-        slug: fields.slug({ name: { label: 'Identifiant' } }),
-        title: fields.text({ label: 'Titre affiché sur la card' }),
-        summary: fields.text({ label: 'Résumé (2-3 lignes)', multiline: true }),
-        link: fields.text({ label: 'Ancre de lien (ex: #nettoyage)' }),
-      }
-    }),
-
-    // ─── CERTIFICATIONS ───────────────────────────────────
-    certifications: collection({
-      label: 'Diplômes et certifications',
-      path: 'content/certifications/*',
-      slugField: 'title',
-      format: { data: 'json' },
-      schema: {
-        title: fields.slug({ name: { label: 'Titre du diplôme' } }),
-        image: fields.image({
-          label: 'Image du diplôme (format portrait)',
-          directory: 'public/assets/images/a-propos',
-          publicPath: '/assets/images/a-propos/',
-        }),
-        order: fields.integer({
-          label: 'Ordre d\'affichage',
-          defaultValue: 1,
-          validation: { isRequired: true, min: 1 },
         }),
       }
     }),
