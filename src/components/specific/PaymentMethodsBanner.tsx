@@ -20,7 +20,7 @@ export default function PaymentMethodsBanner({
         Moyens de paiements acceptés :
       </p>
       <p className="text-center font-content font-normal text-xs text-brand-fg-accent">
-        Chèque • Virement • Carte banquaire
+        Chèque • Virement • Carte bancaire
       </p>
     </div>
   );
