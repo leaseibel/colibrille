@@ -162,10 +162,10 @@ export default function Home() {
             </div>
 
             <div className="hero-actions">
-              <Button variant="brandInset" href="/a-propos#map" style={{ flex: 1 }}>
+              <Button variant="brandInset" href="/a-propos#map">
                 Nous trouver
               </Button>
-              <Button variant="secondary" href="/a-propos#contact-cta" style={{ flex: 1 }}>
+              <Button variant="secondary" href="/a-propos#contact-cta">
                 Nous contacter
               </Button>
             </div>
