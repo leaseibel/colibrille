@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { Footer, PageHero, SectionHeading } from "@/components/layout";
+
+export const metadata: Metadata = {
+  title: "Mentions Légales | Colibrille",
+  description:
+    "Mentions légales du site colibrille.fr - Atelier de detailing automobile à Aytré.",
+};
 import { ContactCTASection } from "@/components/specific";
 
 export default function MentionsLegales() {

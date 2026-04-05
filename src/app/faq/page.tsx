@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { Footer, PageHero } from "@/components/layout";
+
+export const metadata: Metadata = {
+  title: "FAQ | Colibrille - Questions Fréquentes Detailing",
+  description:
+    "Toutes les réponses à vos questions sur le detailing automobile, nos prestations, tarifs et modalités. Atelier Colibrille à Aytré.",
+};
 import { ContactCTASection } from "@/components/specific";
 import FullWidthSection from "@/components/FullWidthSection";
 

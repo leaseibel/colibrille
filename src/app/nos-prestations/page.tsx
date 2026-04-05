@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { Footer, PageHero } from "@/components/layout";
+
+export const metadata: Metadata = {
+  title: "Nos Prestations | Colibrille - Detailing Automobile Aytré",
+  description:
+    "Découvrez toutes nos prestations de detailing : nettoyage intérieur/extérieur, rénovation carrosserie, cuirs, protection céramique. Atelier Colibrille à Aytré.",
+};
 import { ContactCTASection } from "@/components/specific";
 import FullWidthSection from "@/components/FullWidthSection";
 
@@ -19,6 +26,7 @@ export default function NosPrestations() {
           withTopPicture
           withCallToAction
           image="/assets/images/prestations/nettoyage.jpg"
+          imageAlt="Nettoyage intérieur et extérieur automobile"
           ctaHref={CTA_HREF}
         >
           <h2 className="w-full pb-16 text-center font-display font-bold text-md tracking-[1px]">
@@ -59,6 +67,7 @@ export default function NosPrestations() {
           withTopPicture
           withCallToAction
           image="/assets/images/prestations/carrosserie.jpg"
+          imageAlt="Rénovation de carrosserie automobile"
           ctaHref={CTA_HREF}
         >
           <h2 className="w-full pb-16 text-center font-display font-bold text-md tracking-[1px]">
@@ -92,6 +101,7 @@ export default function NosPrestations() {
           withTopPicture
           withCallToAction
           image="/assets/images/prestations/cuirs.jpg"
+          imageAlt="Rénovation des cuirs automobiles"
           ctaHref={CTA_HREF}
         >
           <h2 className="w-full pb-16 text-center font-display font-bold text-md tracking-[1px]">
@@ -118,6 +128,7 @@ export default function NosPrestations() {
           withTopPicture
           withCallToAction
           image="/assets/images/prestations/ceramique.jpg"
+          imageAlt="Protection céramique automobile"
           ctaHref={CTA_HREF}
         >
           <h2 className="w-full pb-16 text-center font-display font-bold text-md tracking-[1px]">

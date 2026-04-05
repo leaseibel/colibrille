@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { Footer, PageHero, SectionHeading } from "@/components/layout";
+
+export const metadata: Metadata = {
+  title: "Politique de Confidentialité | Colibrille",
+  description:
+    "Politique de confidentialité et protection des données personnelles (RGPD) - Colibrille.",
+};
 import { ContactCTASection } from "@/components/specific";
 
 export default function RGPD() {

@@ -6,6 +6,7 @@ type FullWidthSectionProps = {
   children: React.ReactNode;
   id?: string;
   image?: string;
+  imageAlt?: string;
   withTopPicture?: boolean;
   withCallToAction?: boolean;
   ctaHref?: string;
@@ -21,6 +22,7 @@ export default function FullWidthSection({
   children,
   id,
   image,
+  imageAlt = "",
   withTopPicture = false,
   withCallToAction = false,
   ctaHref,
@@ -44,7 +46,7 @@ export default function FullWidthSection({
         {/* Picture */}
         {withTopPicture && image && (
           <div className="relative aspect-[320/90] w-full max-w-[320px] max-h-[90px] shrink-0 overflow-hidden rounded-b-pill">
-            <Image src={image} alt="" fill className="object-cover" />
+            <Image src={image} alt={imageAlt} fill className="object-cover" />
           </div>
         )}
 

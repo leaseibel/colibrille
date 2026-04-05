@@ -19,16 +19,16 @@ export default function Footer({ className }: FooterProps) {
           <div className="flex h-full flex-col justify-between md:col-span-4 md:row-span-2 lg:col-span-3 lg:row-span-2">
             <Logo withBaseline={true} width={180} />
             <div className="mt-16 flex gap-24 text-ghost-inverted-fg-neutral md:mt-0">
-              <a href="mailto:atelier.colibrille.17@gmail.com" aria-label="Email">
+              <a href="mailto:atelier.colibrille.17@gmail.com" aria-label="Nous contacter par email">
                 <Icon name="mail" size="x-large" />
               </a>
-              <a href="https://www.facebook.com/people/Atelier-Colibrille/61574280063226/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <a href="https://www.facebook.com/people/Atelier-Colibrille/61574280063226/" target="_blank" rel="noopener noreferrer" aria-label="Page Facebook Colibrille">
                 <Icon name="facebook" size="x-large" />
               </a>
-              <a href="https://www.instagram.com/ateliercolibrille?igsh=YW55dXppZmZqazAx" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <a href="https://www.instagram.com/ateliercolibrille?igsh=YW55dXppZmZqazAx" target="_blank" rel="noopener noreferrer" aria-label="Suivez-nous sur Instagram">
                 <Icon name="instagram" size="x-large" />
               </a>
-              <a href="https://share.google/a8l0b7AVYfWwomhUj" target="_blank" rel="noopener noreferrer" aria-label="Avis Google">
+              <a href="https://share.google/a8l0b7AVYfWwomhUj" target="_blank" rel="noopener noreferrer" aria-label="Avis Google Colibrille">
                 <div className="relative shrink-0 overflow-hidden" style={{ width: "36px", height: "36px" }}>
                   <div style={{ position: "absolute", inset: "9.38%" }}>
                     <Image
@@ -112,6 +112,10 @@ export default function Footer({ className }: FooterProps) {
             </Button>
           </div>
         </div>
+      </div>
+
+      <div className="mx-auto w-full max-w-container border-t border-ghost-inverted-stroke py-16 text-center font-content text-xs text-[rgba(255,255,255,0.4)]">
+        © {new Date().getFullYear()} Colibrille – Esthétique Automobile. Tous droits réservés.
       </div>
     </footer>
   );

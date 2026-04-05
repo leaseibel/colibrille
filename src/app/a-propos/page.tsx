@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+import Icon from "@/components/Icon";
+
+export const metadata: Metadata = {
+  title: "À Propos | Colibrille - Atelier Detailing Aytré",
+  description:
+    "Découvrez Colibrille, atelier de detailing automobile fondé par Corentin Seibel. Passion, rigueur et expertise au service de votre véhicule à Aytré.",
+};
 import { Footer, PageHero, SectionHeading } from "@/components/layout";
 import { ContactCTASection, MapAddressLink } from "@/components/specific";
 import Card from "@/components/Card";
@@ -78,7 +86,7 @@ export default function APropos() {
                 >
                   <Image
                     src={src}
-                    alt={`Certification ${i + 1}`}
+                    alt={`Certification formation detailing - Corentin Seibel (${i + 1})`}
                     fill
                     style={{ objectFit: "cover", pointerEvents: "none" }}
                   />
@@ -112,7 +120,7 @@ export default function APropos() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Colibrille - 2 Rue Le Verrier, 17440 Aytré"
+              title="Localisation de l'atelier Colibrille à Aytré"
             />
             <div className="flex w-full items-center justify-center py-12">
               <MapAddressLink />
@@ -212,7 +220,15 @@ export default function APropos() {
                 >
                   atelier.collibrille17@gmail.com
                 </a>
-                <p>2 rue Le Verrier, 17440 Aytré</p>
+                <a
+                  href="https://www.google.com/maps/place/Colibrille/@46.1302288,-1.1000299,17z/data=!3m1!4b1!4m6!3m5!1s0x48014d91505b2053:0x306c9b7bd7a3e358!8m2!3d46.1302288!4d-1.097455!16s%2Fg%2F11nb6xc5td?hl=fr-FR&entry=ttu&g_ep=EgoyMDI2MDQwMS4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex shrink-0 items-center gap-4 whitespace-nowrap font-content font-normal text-xs text-primary-foreground underline"
+                >
+                  2 rue Le Verrier, 17440 Aytré
+                  <Icon name="external-link" size="small" />
+                </a>
                 <div>SIRET : 100 817 677 844 48</div>
               </div>
             </div>

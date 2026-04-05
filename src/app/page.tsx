@@ -1,9 +1,16 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Button from "@/components/Button";
 import Card from "@/components/Card";
 import Logo from "@/components/Logo";
 import { Footer, SectionHeading } from "@/components/layout";
 import { EpigraphBanner, FeedbackButton, PrestationSummary, Testimonial } from "@/components/specific";
+
+export const metadata: Metadata = {
+  title: "Colibrille | Detailing Automobile à Aytré",
+  description:
+    "Atelier de detailing automobile professionnel à Aytré. Nettoyage, polissage, protection céramique et rénovation de cuirs. Devis gratuit sur rendez-vous.",
+};
 
 const prestations = [
   {

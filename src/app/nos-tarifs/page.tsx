@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Nos Tarifs | Colibrille - Devis Gratuit Detailing Aytré",
+  description:
+    "Tarifs personnalisés en detailing automobile. Devis gratuit après diagnostic de votre véhicule. Contactez Colibrille à Aytré.",
+};
 import { Footer, PageHero, SectionHeading } from "@/components/layout";
 import { ContactCTASection, Step } from "@/components/specific";
 import Card from "@/components/Card";

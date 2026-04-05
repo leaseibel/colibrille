@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { Footer, PageHero, SectionHeading } from "@/components/layout";
+
+export const metadata: Metadata = {
+  title: "CGV / CGU | Colibrille",
+  description:
+    "Conditions générales de vente et d'utilisation - Colibrille, atelier de detailing automobile.",
+};
 import { ContactCTASection } from "@/components/specific";
 
 export default function CGVCGU() {

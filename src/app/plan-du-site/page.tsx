@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { Footer, PageHero, SectionHeading } from "@/components/layout";
+
+export const metadata: Metadata = {
+  title: "Plan du Site | Colibrille",
+  description:
+    "Plan du site colibrille.fr - Toutes les pages de votre atelier de detailing automobile à Aytré.",
+};
 import { ContactCTASection } from "@/components/specific";
 
 const linkClass = "font-content font-medium text-sm text-ghost-foreground underline pb-16 block";

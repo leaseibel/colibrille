@@ -22,9 +22,18 @@ const petrona = Petrona({
 });
 
 export const metadata: Metadata = {
-  title: "Colibrille — Esthétique automobile à Aytré (17)",
+  // TODO: update when domain is confirmed
+  metadataBase: new URL("https://www.colibrille.fr"),
+  title: "Colibrille | Detailing Automobile à Aytré",
   description:
-    "Nettoyage, rénovation et protection automobile. Votre nouveau centre d'esthétique automobile sur Aytré (17).",
+    "Atelier de detailing automobile professionnel à Aytré. Nettoyage, polissage, protection céramique et rénovation de cuirs. Devis gratuit sur rendez-vous.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    siteName: "Colibrille",
+    images: [{ url: "/assets/logo/logo-with-baseline.svg" }],
+  },
 };
 
 export default function RootLayout({
@@ -34,11 +43,68 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "Colibrille",
+              description: "Atelier de detailing automobile à Aytré",
+              url: "https://www.colibrille.fr",
+              telephone: "+33611489861",
+              email: "atelier.colibrille.17@gmail.com",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "2 rue Le Verrier",
+                postalCode: "17440",
+                addressLocality: "Aytré",
+                addressCountry: "FR",
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 46.1302288,
+                longitude: -1.097455,
+              },
+              openingHoursSpecification: [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                  ],
+                  opens: "08:30",
+                  closes: "18:30",
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: ["Saturday"],
+                  opens: "09:00",
+                  closes: "12:30",
+                },
+              ],
+              priceRange: "€€",
+              image:
+                "https://www.colibrille.fr/assets/logo/logo-with-baseline.svg",
+            }),
+          }}
+        />
+      </head>
       <body
         className={`${inter.variable} ${montserrat.variable} ${petrona.variable} antialiased`}
       >
+        <a
+          href="#main-content"
+          className="skip-link"
+        >
+          Aller au contenu principal
+        </a>
         <Header />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
       </body>
     </html>
   );
