@@ -90,8 +90,8 @@ export default async function APropos() {
                 <Image
                   src={src}
                   alt={`Certification formation detailing - Corentin Seibel (${i + 1})`}
-                  width={594}
-                  height={840}
+                  width={840}
+                  height={594}
                   sizes="(max-width: 768px) 100vw, 33vw"
                   style={{
                     width: "100%",
