@@ -486,6 +486,11 @@ body {
   line-height: var(--font-line-height-sm);
 }
 
+/* Respect EXIF orientation for all images */
+img {
+  image-orientation: from-image;
+}
+
 @layer base {
   html {
     background-color: var(--color-surface-brand-background-base);

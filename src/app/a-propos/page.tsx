@@ -103,23 +103,12 @@ export default async function APropos() {
                     borderRadius: "var(--border-radius-atom)",
                   }}
                 >
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: "50%",
-                      left: "50%",
-                      width: "70.9%",
-                      height: "141%",
-                      transform: "translate(-50%, -50%) rotate(-90deg)",
-                    }}
-                  >
-                    <Image
-                      src={src}
-                      alt={`Certification formation detailing - Corentin Seibel (${i + 1})`}
-                      fill
-                      style={{ objectFit: "cover", pointerEvents: "none" }}
-                    />
-                  </div>
+                  <Image
+                    src={src}
+                    alt={`Certification formation detailing - Corentin Seibel (${i + 1})`}
+                    fill
+                    style={{ objectFit: "cover", pointerEvents: "none" }}
+                  />
                 </div>
               </ImageLightbox>
             </Card>

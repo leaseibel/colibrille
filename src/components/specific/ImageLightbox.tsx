@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import Image from "next/image";
 
 type ImageLightboxProps = {
   src: string;
@@ -33,6 +32,7 @@ export default function ImageLightbox({ src, alt, children }: ImageLightboxProps
         type="button"
         onClick={() => setOpen(true)}
         className="w-full cursor-pointer"
+        style={{ cursor: "zoom-in" }}
         aria-label={`Agrandir : ${alt}`}
       >
         {children}
@@ -50,42 +50,50 @@ export default function ImageLightbox({ src, alt, children }: ImageLightboxProps
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            background: "rgba(0,0,0,0.85)",
+            background: "rgba(0,0,0,0.92)",
+            cursor: "zoom-out",
+            padding: 24,
           }}
         >
-          <button
-            type="button"
-            onClick={close}
-            aria-label="Fermer"
-            style={{
-              position: "absolute",
-              top: 16,
-              right: 16,
-              color: "white",
-              fontSize: 32,
-              lineHeight: 1,
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-              padding: 8,
-            }}
-          >
-            &times;
-          </button>
-          <Image
-            src={src}
-            alt={alt}
-            width={1200}
-            height={800}
-            onClick={(e) => e.stopPropagation()}
-            style={{
-              maxWidth: "90vw",
-              maxHeight: "90vh",
-              width: "auto",
-              height: "auto",
-              objectFit: "contain",
-            }}
-          />
+          <div style={{ position: "relative", maxWidth: "90vw", maxHeight: "90vh" }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={src}
+              alt={alt}
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                maxWidth: "90vw",
+                maxHeight: "90vh",
+                objectFit: "contain",
+                borderRadius: "4px",
+                cursor: "default",
+              }}
+            />
+            <button
+              type="button"
+              onClick={(e) => { e.stopPropagation(); close(); }}
+              aria-label="Fermer"
+              style={{
+                position: "absolute",
+                top: -16,
+                right: -16,
+                width: 36,
+                height: 36,
+                borderRadius: "50%",
+                background: "var(--color-surface-secondary-background-rest)",
+                border: "none",
+                cursor: "pointer",
+                fontSize: 18,
+                fontWeight: "bold",
+                color: "var(--color-surface-primary-foreground)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              &times;
+            </button>
+          </div>
         </div>
       )}
     </>
