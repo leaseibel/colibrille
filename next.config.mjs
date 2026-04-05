@@ -11,9 +11,6 @@ const securityHeaders = [
 const nextConfig = {
   // Required for Keystatic admin UI
   transpilePackages: ["@keystatic/core", "@keystatic/next"],
-  images: {
-    minimumCacheTTL: 0,
-  },
   async headers() {
     return [
       {
