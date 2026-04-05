@@ -29,6 +29,10 @@ export const metadata: Metadata = {
   description:
     "Atelier de detailing automobile professionnel à Aytré. Nettoyage, polissage, protection céramique et rénovation de cuirs. Devis gratuit sur rendez-vous.",
   alternates: { canonical: "/" },
+  icons: {
+    icon: "/icon-192.png",
+    apple: "/apple-icon.png",
+  },
   openGraph: {
     type: "website",
     locale: "fr_FR",

@@ -91,6 +91,12 @@ export default config({
           description: 'Le src de l\'iframe Google Maps (page À propos)',
           defaultValue: 'https://www.google.com/maps/embed?pb=...',
         }),
+        favicon: fields.image({
+          label: 'Favicon',
+          description: 'Icône affichée dans l\'onglet du navigateur (format .ico, .png ou .svg, idéalement 32x32px)',
+          directory: 'public/assets',
+          publicPath: '/assets/',
+        }),
       }
     }),
 

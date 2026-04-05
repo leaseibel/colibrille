@@ -12,5 +12,6 @@
   "googleMapsUrl": "https://www.google.com/maps/place/Colibrille/@46.1302288,-1.1000299,17z/data=!3m1!4b1!4m6!3m5!1s0x48014d91505b2053:0x306c9b7bd7a3e358!8m2!3d46.1302288!4d-1.097455!16s%2Fg%2F11nb6xc5td?hl=fr-FR&entry=ttu&g_ep=EgoyMDI2MDQwMS4wIKXMDSoASAFQAw%3D%3D",
   "googleMapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2720.123!2d-1.0974550!3d46.1302288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48014d91505b2053%3A0x306c9b7bd7a3e358!2sColibrille!5e0!3m2!1sfr!2sfr!4v1680000000000!5m2!1sfr!2sfr",
   "logoWithBaseline": null,
-  "logoWithoutBaseline": null
+  "logoWithoutBaseline": null,
+  "favicon": null
 }

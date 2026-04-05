@@ -17,5 +17,6 @@ export async function getSettings() {
     googleMapsEmbed: settings?.googleMapsEmbed ?? 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2720.123!2d-1.0974550!3d46.1302288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48014d91505b2053%3A0x306c9b7bd7a3e358!2sColibrille!5e0!3m2!1sfr!2sfr!4v1680000000000!5m2!1sfr!2sfr',
     logoWithBaseline: settings?.logoWithBaseline ?? '/assets/logo/logo-with-baseline.svg',
     logoWithoutBaseline: settings?.logoWithoutBaseline ?? '/assets/logo/logo-without-baseline.svg',
+    favicon: settings?.favicon ?? null,
   }
 }
