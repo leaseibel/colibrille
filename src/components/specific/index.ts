@@ -7,4 +7,3 @@ export { default as PaymentMethodsBanner } from "./PaymentMethodsBanner";
 export { default as FeatureItem } from "./FeatureItem";
 export { default as ContactCTASection } from "./ContactCTASection";
 export { default as MapAddressLink } from "./MapAddressLink";
-export { default as ImageLightbox } from "./ImageLightbox";

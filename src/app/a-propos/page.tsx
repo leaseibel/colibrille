@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "Découvrez Colibrille, atelier de detailing automobile fondé par Corentin Seibel. Passion, rigueur et expertise au service de votre véhicule à Aytré.",
 };
 import { Footer, PageHero, SectionHeading } from "@/components/layout";
-import { ContactCTASection, MapAddressLink, ImageLightbox } from "@/components/specific";
+import { ContactCTASection, MapAddressLink } from "@/components/specific";
 import Card from "@/components/Card";
 import FullWidthSection from "@/components/FullWidthSection";
 import { getSettings } from "@/lib/settings";
@@ -86,27 +86,22 @@ export default async function APropos() {
             : defaultCertifications
           ).filter(Boolean).map((src, i) => (
             <Card key={src || i} variant="raised" className="min-w-[120px] flex-[1_0_0] p-8">
-              <ImageLightbox
-                src={src}
-                alt={`Certification formation detailing - Corentin Seibel (${i + 1})`}
+              <div
+                style={{
+                  position: "relative",
+                  width: "100%",
+                  aspectRatio: "3 / 4",
+                  overflow: "hidden",
+                  borderRadius: "var(--border-radius-atom)",
+                }}
               >
-                <div
-                  style={{
-                    position: "relative",
-                    width: "100%",
-                    aspectRatio: "3 / 4",
-                    overflow: "hidden",
-                    borderRadius: "var(--border-radius-atom)",
-                  }}
-                >
-                  <Image
-                    src={src}
-                    alt={`Certification formation detailing - Corentin Seibel (${i + 1})`}
-                    fill
-                    style={{ objectFit: "cover", pointerEvents: "none" }}
-                  />
-                </div>
-              </ImageLightbox>
+                <Image
+                  src={src}
+                  alt={`Certification formation detailing - Corentin Seibel (${i + 1})`}
+                  fill
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
             </Card>
           ))}
         </div>
