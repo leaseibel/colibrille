@@ -1,6 +1,10 @@
 {
   "items": [
     {
+      "slug": "ceramique",
+      "summary": "Protégez durablement votre carrosserie contre les agressions extérieures, les UV et contaminants. Cette barrière hydrophobe renforce la brillance de votre véhicule, préserve sa peinture et facilite ses futurs entretiens réguliers."
+    },
+    {
       "slug": "nettoyage",
       "summary": "Redonnez de l'éclat et un confort durable à votre véhicule grâce à nos prestations complètes de nettoyage. Nous traitons chaque recoin avec minutie pour vous offrir un habitacle sain et une carrosserie parfaitement propre."
     },
@@ -11,10 +15,6 @@
     {
       "slug": "carrosserie",
       "summary": "Valorisez votre patrimoine automobile en lui redonnant une apparence proche du neuf. Grâce à nos techniques de polissage professionnel, nous supprimons les micro-rayures pour raviver la brillance de votre peinture."
-    },
-    {
-      "slug": "ceramique",
-      "summary": "Protégez durablement votre carrosserie contre les agressions extérieures, les UV et contaminants. Cette barrière hydrophobe renforce la brillance de votre véhicule, préserve sa peinture et facilite ses futurs entretiens réguliers."
     }
   ]
 }
