@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import Logo from "@/components/Logo";
 import Icon from "@/components/Icon";
@@ -21,11 +22,23 @@ export default function Footer({ className }: FooterProps) {
               <a href="mailto:atelier.colibrille.17@gmail.com" aria-label="Email">
                 <Icon name="mail" size="x-large" />
               </a>
-              <a href="#" aria-label="Facebook">
+              <a href="https://www.facebook.com/people/Atelier-Colibrille/61574280063226/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <Icon name="facebook" size="x-large" />
               </a>
-              <a href="#" aria-label="Instagram">
+              <a href="https://www.instagram.com/ateliercolibrille?igsh=YW55dXppZmZqazAx" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <Icon name="instagram" size="x-large" />
+              </a>
+              <a href="https://share.google/a8l0b7AVYfWwomhUj" target="_blank" rel="noopener noreferrer" aria-label="Avis Google">
+                <div className="relative shrink-0 overflow-hidden" style={{ width: "36px", height: "36px" }}>
+                  <div style={{ position: "absolute", inset: "9.38%" }}>
+                    <Image
+                      src="/assets/icons/icon-google.svg"
+                      alt="Google"
+                      fill
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+                </div>
               </a>
             </div>
           </div>
@@ -57,9 +70,9 @@ export default function Footer({ className }: FooterProps) {
               <Link variant="secondary" href="mailto:atelier.colibrille.17@gmail.com">
                 atelier.colibrille.17@gmail.com
               </Link>
-              <span className="whitespace-nowrap font-content font-normal text-xs text-primary-raised">
+              <Link variant="secondary" href="https://www.google.com/maps/place/Colibrille/@46.1302288,-1.1000299,17z/data=!3m1!4b1!4m6!3m5!1s0x48014d91505b2053:0x306c9b7bd7a3e358!8m2!3d46.1302288!4d-1.097455!16s%2Fg%2F11nb6xc5td?hl=fr-FR&entry=ttu&g_ep=EgoyMDI2MDQwMS4wIKXMDSoASAFQAw%3D%3D" external>
                 2 rue Le Verrier, 17440 Aytré
-              </span>
+              </Link>
               <span className="whitespace-nowrap font-content font-normal text-xs text-primary-raised">
                 SIRET : 100 817 677 844 48
               </span>
@@ -94,7 +107,7 @@ export default function Footer({ className }: FooterProps) {
             </div>
 
             {/* CTA */}
-            <Button variant="accent" className="w-full">
+            <Button variant="secondary" href="/a-propos#contact-cta" className="w-full">
               Me contacter
             </Button>
           </div>

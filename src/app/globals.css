@@ -220,7 +220,11 @@
   /* ============ BORDER RADIUS ============ */
   --border-radius-atom: 4px;
   --border-radius-container: 8px;
+  --border-radius-inner-container: 4px;
   --border-radius-rounded: 999px;
+
+  /* ============ GRADIENTS ============ */
+  --gradient-linear-01: linear-gradient(to top, #16302d, #0b5b53);
 
   /* ============ ICON SIZES ============ */
   --icon-size-small: 16px;
@@ -393,8 +397,6 @@ body {
   }
 }
 
-html { background-color: #0b5b53; }
-
 .header-transparent {
   background: transparent !important;
 }
@@ -403,6 +405,18 @@ html { background-color: #0b5b53; }
   background: #0b5b53 !important;
 }
 
-html {
-  background-color: #16302d;
+/* Button hover/active states */
+.btn-secondary:hover { background: var(--color-surface-secondary-background-hovered); }
+.btn-secondary:active { background: var(--color-surface-secondary-background-active); }
+.btn-brand-inset:hover { background: var(--color-surface-brand-background-inset-hovered); }
+.btn-brand-inset:active { background: var(--color-surface-brand-background-inset-active); }
+.btn-primary:hover { background: var(--color-surface-primary-background-base); }
+.btn-primary:active { background: var(--color-surface-primary-background-base); }
+
+@layer base {
+  html {
+    background: linear-gradient(to top, #16302d, #0b5b53);
+    min-height: 100%;
+    scroll-behavior: smooth;
+  }
 }

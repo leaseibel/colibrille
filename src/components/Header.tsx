@@ -42,7 +42,7 @@ export default function Header() {
         </nav>
 
         <Button
-          variant="accent"
+          variant="secondary"
           pill
           href="tel:+33611489861"
           className="hidden md:inline-flex text-xs"

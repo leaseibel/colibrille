@@ -2,7 +2,7 @@ import { Footer, PageHero } from "@/components/layout";
 import { ContactCTASection } from "@/components/specific";
 import FullWidthSection from "@/components/FullWidthSection";
 
-const CTA_HREF = "mailto:atelier.colibrille.17@gmail.com";
+const CTA_HREF = "#contact-cta";
 
 export default function FAQ() {
   return (

@@ -5,6 +5,7 @@ import { PaymentMethodsBanner } from "@/components/specific";
 export default function ContactCTASection() {
   return (
     <section
+      id="contact-cta"
       className="section-outer flex w-full flex-col items-center py-40"
       style={{
         background:
@@ -29,7 +30,7 @@ export default function ContactCTASection() {
           </div>
 
           <Button
-            variant="accent"
+            variant="secondary"
             href="tel:+33611489861"
             className="shrink-0"
           >

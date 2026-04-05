@@ -2,7 +2,7 @@ import { Footer, PageHero } from "@/components/layout";
 import { ContactCTASection } from "@/components/specific";
 import FullWidthSection from "@/components/FullWidthSection";
 
-const CTA_HREF = "mailto:atelier.colibrille.17@gmail.com";
+const CTA_HREF = "#contact-cta";
 
 export default function NosPrestations() {
   return (
@@ -15,6 +15,7 @@ export default function NosPrestations() {
       <section className="section-outer flex flex-col items-center gap-2 bg-primary-base pt-24 pb-40">
         {/* Nettoyage */}
         <FullWidthSection
+          id="nettoyage"
           withTopPicture
           withCallToAction
           image="/assets/images/prestations/nettoyage.jpg"
@@ -54,6 +55,7 @@ export default function NosPrestations() {
 
         {/* Carrosserie */}
         <FullWidthSection
+          id="carrosserie"
           withTopPicture
           withCallToAction
           image="/assets/images/prestations/carrosserie.jpg"
@@ -86,6 +88,7 @@ export default function NosPrestations() {
 
         {/* Cuirs */}
         <FullWidthSection
+          id="cuirs"
           withTopPicture
           withCallToAction
           image="/assets/images/prestations/cuirs.jpg"
@@ -111,6 +114,7 @@ export default function NosPrestations() {
 
         {/* Céramique */}
         <FullWidthSection
+          id="ceramique"
           withTopPicture
           withCallToAction
           image="/assets/images/prestations/ceramique.jpg"

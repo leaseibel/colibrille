@@ -1,33 +1,31 @@
-import { ButtonHTMLAttributes, AnchorHTMLAttributes } from "react";
+import { type ButtonHTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
 
-type Variant = "accent" | "inset" | "secondary";
+type Variant = "secondary" | "brandInset" | "primary";
 
-type BaseProps = {
+type ButtonProps = {
   variant?: Variant;
   pill?: boolean;
-};
-
-type ButtonAsButton = BaseProps &
-  ButtonHTMLAttributes<HTMLButtonElement> & { href?: undefined };
-type ButtonAsLink = BaseProps &
-  AnchorHTMLAttributes<HTMLAnchorElement> & { href: string };
-
-type ButtonProps = ButtonAsButton | ButtonAsLink;
+  href?: string;
+  children?: React.ReactNode;
+  buttonLabel?: string;
+  className?: string;
+} & Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className">;
 
 const variantStyles: Record<Variant, string> = {
-  accent:
-    "bg-secondary text-secondary-foreground hover:bg-secondary-hovered active:bg-secondary-active",
-  inset:
-    "bg-brand-inset text-brand-fg-neutral hover:bg-brand-inset-hovered active:bg-brand-inset-active",
-  secondary:
-    "bg-primary-raised text-primary-foreground border border-primary-stroke hover:bg-primary-base active:bg-primary-base",
+  secondary: "btn-secondary bg-secondary text-secondary-foreground",
+  brandInset: "btn-brand-inset bg-brand-inset text-brand-fg-neutral",
+  primary:
+    "btn-primary bg-primary-raised text-primary-foreground border border-primary-stroke",
 };
 
 export default function Button({
-  variant = "accent",
+  variant = "secondary",
   pill,
-  className = "",
+  href,
+  children,
+  buttonLabel,
+  className,
   ...props
 }: ButtonProps) {
   const classes = cn(
@@ -37,9 +35,26 @@ export default function Button({
     className,
   );
 
-  if ("href" in props && props.href) {
-    return <a className={classes} {...(props as ButtonAsLink)} />;
+  const content = children || buttonLabel;
+  const isExternal = href?.startsWith("http");
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        className={classes}
+        {...(isExternal
+          ? { target: "_blank", rel: "noopener noreferrer" }
+          : {})}
+      >
+        {content}
+      </a>
+    );
   }
 
-  return <button className={classes} {...(props as ButtonAsButton)} />;
+  return (
+    <button className={classes} {...props}>
+      {content}
+    </button>
+  );
 }

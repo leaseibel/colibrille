@@ -38,7 +38,7 @@ export default function PrestationSummary({
         <p className="font-content font-normal text-xs text-primary-foreground text-center">
           {description}
         </p>
-        <Button variant="secondary" href={href}>
+        <Button variant="primary" href={href}>
           En savoir +
         </Button>
       </div>

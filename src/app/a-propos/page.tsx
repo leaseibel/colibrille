@@ -94,13 +94,13 @@ export default function APropos() {
         <SectionHeading title="Informations pratiques" />
 
         {/* Map card */}
-        <Card variant="raised" className="w-full max-w-container items-stretch p-8">
+        <Card id="map" variant="raised" className="w-full max-w-container items-stretch p-8">
           <div className="flex w-full flex-col items-center gap-8 overflow-hidden rounded-atom">
             <p className="w-full py-12 text-center font-display font-bold text-sm tracking-[0.8px]">
               Nos trouver :
             </p>
             <iframe
-              src="https://maps.google.com/maps?q=2+Rue+Le+Verrier+17440+Aytré+France&t=&z=16&ie=UTF8&iwloc=&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2720.123!2d-1.0974550!3d46.1302288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48014d91505b2053%3A0x306c9b7bd7a3e358!2sColibrille!5e0!3m2!1sfr!2sfr!4v1680000000000!5m2!1sfr!2sfr"
               width="100%"
               height="420"
               style={{
@@ -170,7 +170,7 @@ export default function APropos() {
         </div>
 
         {/* Info cards row */}
-        <div className="mx-auto flex w-full max-w-content flex-col items-stretch gap-20 md:flex-row">
+        <div id="contact" className="mx-auto flex w-full max-w-content flex-col items-stretch gap-20 md:flex-row">
           {/* Horaires */}
           <Card variant="raised" className="flex-1 p-24">
             <div className="flex w-full flex-col items-start gap-8">

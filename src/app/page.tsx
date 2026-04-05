@@ -10,25 +10,25 @@ const prestations = [
     title: "Nettoyage intérieur/extérieur",
     description:
       "Redonnez de l'éclat et un confort durable à votre véhicule grâce à nos prestations complètes de nettoyage. Nous traitons chaque recoin avec minutie pour vous offrir un habitacle sain et une carrosserie parfaitement propre.",
-    href: "/nos-prestations",
+    href: "/nos-prestations#nettoyage",
   },
   {
     title: "Rénovation de la carrosserie",
     description:
       "Valorisez votre patrimoine automobile en lui redonnant une apparence proche du neuf. Grâce à nos techniques de polissage professionnel, nous supprimons les micro-rayures pour raviver la brillance de votre peinture.",
-    href: "/nos-prestations",
+    href: "/nos-prestations#carrosserie",
   },
   {
     title: "Rénovation des cuirs",
     description:
       "Le nettoyage en profondeur et la réparation des imperfections permettent de prolonger la durée de vie de votre intérieur. Nous nourrissons vos selleries pour leur redonner souplesse et couleur, tout en gagnant en confort.",
-    href: "/nos-prestations",
+    href: "/nos-prestations#cuirs",
   },
   {
     title: "Protection céramique",
     description:
       "Protégez durablement votre carrosserie contre les agressions extérieures, les UV et contaminants. Cette barrière hydrophobe renforce la brillance de votre véhicule, préserve sa peinture et facilite ses futurs entretiens réguliers.",
-    href: "/nos-prestations",
+    href: "/nos-prestations#ceramique",
   },
 ];
 
@@ -155,10 +155,10 @@ export default function Home() {
             </div>
 
             <div className="hero-actions">
-              <Button variant="inset" href="/nos-prestations" style={{ flex: 1 }}>
+              <Button variant="brandInset" href="/a-propos#map" style={{ flex: 1 }}>
                 Nous trouver
               </Button>
-              <Button variant="accent" href="mailto:atelier.colibrille.17@gmail.com" style={{ flex: 1 }}>
+              <Button variant="secondary" href="/a-propos#contact-cta" style={{ flex: 1 }}>
                 Nous contacter
               </Button>
             </div>
@@ -231,7 +231,7 @@ export default function Home() {
           ))}
         </div>
 
-        <FeedbackButton href="https://g.page/r/colibrille" />
+        <FeedbackButton href="https://share.google/FIPqEAhNOLIaYfHUU" />
       </section>
 
       {/* SECTION 5: FOOTER */}

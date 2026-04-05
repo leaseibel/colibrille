@@ -20,7 +20,7 @@ export default function Menu({ variant = "large", className }: MenuProps) {
     >
       <Tabs />
       <Button
-        variant="accent"
+        variant="secondary"
         pill={isLarge}
         href="tel:+33611489861"
         className={cn(!isLarge && "w-full")}

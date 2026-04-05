@@ -4,6 +4,7 @@ import Button from "./Button";
 
 type FullWidthSectionProps = {
   children: React.ReactNode;
+  id?: string;
   image?: string;
   withTopPicture?: boolean;
   withCallToAction?: boolean;
@@ -18,6 +19,7 @@ type FullWidthSectionProps = {
 
 export default function FullWidthSection({
   children,
+  id,
   image,
   withTopPicture = false,
   withCallToAction = false,
@@ -31,6 +33,7 @@ export default function FullWidthSection({
 }: FullWidthSectionProps) {
   return (
     <div
+      id={id}
       className={cn(
         "flex w-full items-start justify-center",
         className,
@@ -73,8 +76,8 @@ export default function FullWidthSection({
             {/* CTA */}
             {withCallToAction && (
               <Button
-                variant="accent"
-                href={ctaHref || "mailto:atelier.colibrille.17@gmail.com"}
+                variant="secondary"
+                href={ctaHref || "#contact-cta"}
                 className="shrink-0"
               >
                 {ctaLabel}

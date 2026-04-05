@@ -103,6 +103,7 @@ or the corresponding Tailwind utility that maps to it via `tailwind.config.ts`.
 |---|---|---|---|
 | `--border-radius-atom` | `4px` | `rounded-atom` | Buttons, small elements |
 | `--border-radius-container` | `8px` | `rounded-container` | Cards, panels |
+| `--border-radius-inner-container` | `4px` | `rounded-atom` | Inner containers (same as atom) |
 | `--border-radius-rounded` | `999px` | `rounded-pill` | Pill shapes |
 
 ### Icon sizes
