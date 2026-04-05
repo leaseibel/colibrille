@@ -475,15 +475,30 @@ body {
   text-decoration: underline;
   color: var(--color-surface-primary-foreground);
 }
-.keystatic-content ul {
-  list-style-type: disc;
+.keystatic-content ul,
+.keystatic-content ol {
   padding-left: 1.5em;
   margin-bottom: var(--layout-gap-400);
 }
+
 .keystatic-content li {
+  font-family: var(--font-family-content);
+  font-size: var(--font-size-xs);
+  line-height: var(--font-line-height-xs);
+  color: var(--color-surface-ghost-foreground);
   margin-bottom: var(--layout-gap-100);
-  font-size: var(--font-size-sm);
-  line-height: var(--font-line-height-sm);
+}
+
+.keystatic-content ul {
+  list-style-type: disc;
+}
+
+.keystatic-content ol {
+  list-style-type: decimal;
+}
+
+.keystatic-content li::marker {
+  color: var(--color-surface-ghost-foreground);
 }
 
 @layer base {
