@@ -1,0 +1,12 @@
+{
+  "question": "Quelles sont les modalités de règlement proposés par Colibrille ?",
+  "order": 7,
+  "answer": {
+    "document": [
+      {
+        "type": "paragraph",
+        "children": [{ "text": "Vous pouvez régler vos prestations par carte bancaire, par virement instantané, ou par chèque. Nous vous demanderons un acompte de 30% à la signature du devis pour confirmer la prestation. Le solde de 70% devra être réglé lors de la restitution de votre véhicule, après avoir fait un tour complet ensemble." }]
+      }
+    ]
+  }
+}

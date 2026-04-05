@@ -1,0 +1,12 @@
+{
+  "question": "Comment établissez-vous votre devis ?",
+  "order": 4,
+  "answer": {
+    "document": [
+      {
+        "type": "paragraph",
+        "children": [{ "text": "En detailing automobile, il est impossible de proposer de tarif unique, car aucun véhicule ne nécessite le même travail. Le prix dépend donc du temps nécessaire pour réaliser la prestation dans les règles de l'art. Plus le véhicule demande de préparation, de correction ou de protection, plus le temps sera important. A cela peuvent s'ajouter certains produits spécifiques utilisés pour votre véhicule. Le devis est toujours expliqué et détaillé afin que vous sachiez précisément ce qui est prévu et pourquoi. Nous établissons nos devis après avoir inspecté le véhicule et échangé avec son propriétaire sur les prestations à effectuer." }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "question": "Votre atelier est-il facilement accessible ?",
+  "order": 9,
+  "answer": {
+    "document": [
+      {
+        "type": "paragraph",
+        "children": [{ "text": "Nous avons choisi d'implanter notre atelier dans la zone de Belle Aire, d'Aytré afin de vous garantir un accès simple et rapide. Situé à quelques minutes de La Rochelle, l'atelier est directement accessible par la rocade reliant La Rochelle à Rochefort RN237. Pour plus de confort, vous pouvez également utiliser les réseaux de bus si vous résidez à La Rochelle (ligne Illico 1)." }]
+      }
+    ]
+  }
+}

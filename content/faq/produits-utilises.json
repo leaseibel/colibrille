@@ -1,0 +1,12 @@
+{
+  "question": "Quels sont les produits que vous utilisez. Peut-on les retrouver dans le commerce ?",
+  "order": 6,
+  "answer": {
+    "document": [
+      {
+        "type": "paragraph",
+        "children": [{ "text": "Chez Colibrille, nous travaillons exclusivement avec des produits de gamme professionnelle, sélectionnés auprès de spécialistes reconnus du detailing automobile. Chaque produit est choisi pour son efficacité, sa sécurité et sa capacité à préserver durablement les matériaux des véhicules qui nous sont confiés. Associés à un outillage spécifique et professionnel, ces équipements nous permettent de garantir un niveau de finition élevé et un résultat optimal pour chaque véhicule." }]
+      }
+    ]
+  }
+}

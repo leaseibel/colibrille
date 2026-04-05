@@ -1,0 +1,22 @@
+{
+  "content": {
+    "document": [
+      {
+        "type": "paragraph",
+        "children": [{ "text": "Pages principales", "bold": true }]
+      },
+      {
+        "type": "paragraph",
+        "children": [{ "text": "Accueil — Nos prestations — Nos tarifs — À propos — FAQ" }]
+      },
+      {
+        "type": "paragraph",
+        "children": [{ "text": "Pages annexes", "bold": true }]
+      },
+      {
+        "type": "paragraph",
+        "children": [{ "text": "Mentions Légales — Politique de confidentialité (RGPD) — CGV / CGU — Plan du site" }]
+      }
+    ]
+  }
+}
