@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import Icon from "@/components/Icon";
 
 type PaymentMethodsBannerProps = {
   className?: string;
@@ -10,16 +11,17 @@ export default function PaymentMethodsBanner({
   return (
     <div
       className={cn(
-        "w-full rounded-atom bg-brand-inset px-24 py-12 text-center",
+        "flex w-full flex-col items-center justify-center gap-4 rounded-atom bg-brand-inset px-24 py-16",
         className,
       )}
     >
-      <span className="font-content font-normal text-xs text-brand-fg-accent">
-        Moyens de paiements acceptés :{" "}
-      </span>
-      <span className="font-content font-bold text-xs text-brand-fg-accent">
-        chèque, virement, carte bancaire
-      </span>
+      <Icon name="info" size="large" className="text-brand-fg-accent" />
+      <p className="text-center font-display font-bold text-sm tracking-[0.8px] text-brand-fg-accent">
+        Moyens de paiements acceptés :
+      </p>
+      <p className="text-center font-content font-normal text-xs text-brand-fg-accent">
+        Chèque • Virement • Carte banquaire
+      </p>
     </div>
   );
 }

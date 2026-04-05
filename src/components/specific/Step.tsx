@@ -1,35 +1,37 @@
 import { cn } from "@/lib/utils";
 
 type StepProps = {
-  stepNumber: number;
+  number: string;
   title: string;
   description: string;
   className?: string;
 };
 
 export default function Step({
-  stepNumber,
+  number,
   title,
   description,
   className,
 }: StepProps) {
   return (
     <div className={cn("flex flex-col items-center", className)}>
-      {/* Badge */}
-      <div className="flex h-[64px] w-[48px] items-center justify-center rounded-pill bg-brand">
-        <span className="font-display font-bold text-[32px] leading-[48px] text-brand-fg-accent">
-          {stepNumber}
-        </span>
+      {/* Step container — 48px tall, number pill overflows top */}
+      <div className="flex h-[48px] w-full shrink-0 items-end justify-center">
+        <div className="flex h-[64px] w-[48px] items-center justify-center rounded-pill bg-brand">
+          <span className="whitespace-nowrap text-center font-display font-bold text-[32px] leading-[48px] text-brand-fg-accent">
+            {number}
+          </span>
+        </div>
       </div>
 
       {/* Content */}
-      <div className="flex flex-col gap-12 px-16 py-20 text-center">
-        <span className="font-display font-bold text-sm tracking-[0.8px] text-primary-foreground">
+      <div className="flex w-full flex-col items-center gap-12 px-16 py-20 text-center">
+        <p className="whitespace-nowrap font-display font-bold text-sm tracking-[0.8px] text-brand">
           {title}
-        </span>
-        <span className="font-content font-normal text-xs text-ghost-foreground">
+        </p>
+        <p className="w-full font-content font-normal text-xs text-ghost-foreground">
           {description}
-        </span>
+        </p>
       </div>
     </div>
   );

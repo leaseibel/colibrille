@@ -7,6 +7,7 @@ import {
   Car,
   Menu,
   Xmark,
+  InfoCircle,
 } from "iconoir-react";
 import { cn } from "@/lib/utils";
 
@@ -19,6 +20,7 @@ const iconMap = {
   car: Car,
   menu: Menu,
   "x-mark": Xmark,
+  info: InfoCircle,
 } as const;
 
 const sizeMap = {

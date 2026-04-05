@@ -184,6 +184,17 @@ or the corresponding Tailwind utility that maps to it via `tailwind.config.ts`.
 - Class merging uses `cn()` from `src/lib/utils.ts` (wraps `clsx`)
 - Components must not set default padding or fixed dimensions — consumers control layout via `className`
 
+### SectionHeading
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `title` | `React.ReactNode` | _(required)_ | Main heading text |
+| `subtitle` | `string` | — | Optional second line rendered below title with `font-weight-medium` on line 1 and `font-weight-bold` on line 2 |
+| `inverted` | `boolean` | `false` | Light text for dark backgrounds |
+| `viewport` | `"large" \| "small"` | — | Force layout variant. Omit for auto-responsive (switches at 768px) |
+| `withTag` | `boolean` | `false` | Show a pink pill tag below the heading |
+| `tagLabel` | `string` | — | Text for the tag pill |
+
 ## Responsive breakpoints
 
 | Range | Prefix | Description |

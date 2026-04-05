@@ -5,3 +5,4 @@ export { default as PrestationSummary } from "./PrestationSummary";
 export { default as Step } from "./Step";
 export { default as PaymentMethodsBanner } from "./PaymentMethodsBanner";
 export { default as FeatureItem } from "./FeatureItem";
+export { default as ContactCTASection } from "./ContactCTASection";
