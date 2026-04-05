@@ -111,7 +111,7 @@ export default async function Footer({ className }: FooterProps) {
 
             {/* CTA */}
             <Button variant="secondary" href="/a-propos#contact-cta" className="w-full">
-              Me contacter
+              Nous contacter
             </Button>
           </div>
         </div>
