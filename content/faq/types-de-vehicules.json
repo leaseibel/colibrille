@@ -1,12 +1,4 @@
 {
   "question": "Quels types de véhicules peuvent bénéficier des services de l'atelier Colibrille ?",
-  "order": 3,
-  "answer": {
-    "document": [
-      {
-        "type": "paragraph",
-        "children": [{ "text": "Chez Colibrille, nous proposons diverses prestations, allant du nettoyage, au polissage, en passant également par la pose de traitements céramique ou de cire et même de l'entretien et la réparation de vos cuirs. Nos services s'adressent à tous types de véhicules, sans aucune exception. Qu'il s'agisse d'un véhicule neuf à protéger, d'un véhicule d'occasion à sublimer, d'un véhicule en location à restituer, ou encore d'un véhicule de collection nécessitant une attention particulère, chaque automobile est la bienvenue chez Colibrille. Nous adaptions chacune de nos prestations aux besoins spécifiques du véhicule et aux attentes de son propriétaire, afin de proposer un service entièrement personnalisé. Chez Colibrille, chaque demande est unique, et bénéficie d'un accompagnement sur mesure." }]
-      }
-    ]
-  }
+  "order": 3
 }
