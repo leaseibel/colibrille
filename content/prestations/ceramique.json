@@ -1,42 +1,5 @@
 {
   "slug": "ceramique",
   "title": "Protection céramique",
-  "image": null,
-  "content": {
-    "document": [
-      {
-        "type": "heading",
-        "level": 2,
-        "children": [
-          {
-            "text": "Protection céramique"
-          }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "children": [
-          {
-            "text": "La protection céramique haut de gamme proposée par Colibrille assure une défense optimale de la carrosserie contre les agressions extérieures du quotidien telles que les traces d'eau, le film routier, le sel, le goudron, la résine ou encore les insectes."
-          }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "children": [
-          {
-            "text": "Grâce à son effet déperlant, ce traitement créé une barrière protectrice qui réduit fortement l'adhérence des impuretés à la surface du véhicule."
-          }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "children": [
-          {
-            "text": "La céramique agit également en lissant les micro-imperfections de la carrosserie la rendant ainsi hydrophobe et nettement plus facile à entretenir au quotidien."
-          }
-        ]
-      }
-    ]
-  }
+  "image": "/assets/images/prestations/ceramique/image.jpg"
 }
