@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat, Petrona } from "next/font/google";
+import { headers } from "next/headers";
 import { HeaderWrapper } from "@/components/layout";
 import "./globals.css";
 
@@ -36,74 +37,82 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headersList = await headers();
+  const pathname = headersList.get("x-pathname") || "";
+  const isKeystatic = pathname.startsWith("/keystatic");
+
   return (
     <html lang="fr">
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              name: "Colibrille",
-              description: "Atelier de detailing automobile à Aytré",
-              url: "https://www.atelier-colibrille.fr",
-              telephone: "+33611489861",
-              email: "atelier.colibrille.17@gmail.com",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "2 rue Le Verrier",
-                postalCode: "17440",
-                addressLocality: "Aytré",
-                addressCountry: "FR",
-              },
-              geo: {
-                "@type": "GeoCoordinates",
-                latitude: 46.1302288,
-                longitude: -1.097455,
-              },
-              openingHoursSpecification: [
-                {
-                  "@type": "OpeningHoursSpecification",
-                  dayOfWeek: [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                  ],
-                  opens: "08:30",
-                  closes: "18:30",
+        {!isKeystatic && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                name: "Colibrille",
+                description: "Atelier de detailing automobile à Aytré",
+                url: "https://www.atelier-colibrille.fr",
+                telephone: "+33611489861",
+                email: "atelier.colibrille.17@gmail.com",
+                address: {
+                  "@type": "PostalAddress",
+                  streetAddress: "2 rue Le Verrier",
+                  postalCode: "17440",
+                  addressLocality: "Aytré",
+                  addressCountry: "FR",
                 },
-                {
-                  "@type": "OpeningHoursSpecification",
-                  dayOfWeek: ["Saturday"],
-                  opens: "09:00",
-                  closes: "12:30",
+                geo: {
+                  "@type": "GeoCoordinates",
+                  latitude: 46.1302288,
+                  longitude: -1.097455,
                 },
-              ],
-              priceRange: "€€",
-              image:
-                "https://www.atelier-colibrille.fr/assets/logo/logo-with-baseline.svg",
-            }),
-          }}
-        />
+                openingHoursSpecification: [
+                  {
+                    "@type": "OpeningHoursSpecification",
+                    dayOfWeek: [
+                      "Monday",
+                      "Tuesday",
+                      "Wednesday",
+                      "Thursday",
+                      "Friday",
+                    ],
+                    opens: "08:30",
+                    closes: "18:30",
+                  },
+                  {
+                    "@type": "OpeningHoursSpecification",
+                    dayOfWeek: ["Saturday"],
+                    opens: "09:00",
+                    closes: "12:30",
+                  },
+                ],
+                priceRange: "€€",
+                image:
+                  "https://www.atelier-colibrille.fr/assets/logo/logo-with-baseline.svg",
+              }),
+            }}
+          />
+        )}
       </head>
       <body
         className={`${inter.variable} ${montserrat.variable} ${petrona.variable} antialiased`}
       >
-        <a
-          href="#main-content"
-          className="skip-link"
-        >
-          Aller au contenu principal
-        </a>
-        <HeaderWrapper />
+        {!isKeystatic && (
+          <a
+            href="#main-content"
+            className="skip-link"
+          >
+            Aller au contenu principal
+          </a>
+        )}
+        {!isKeystatic && <HeaderWrapper />}
         <main id="main-content">{children}</main>
       </body>
     </html>
