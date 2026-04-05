@@ -1,7 +1,16 @@
 {
   "items": [
-    { "title": "Certification 1", "image": null },
-    { "title": "Certification 2", "image": null },
-    { "title": "Certification 3", "image": null }
+    {
+      "title": "Certification 1",
+      "image": "/assets/images/a-propos/items/0/image.jpg"
+    },
+    {
+      "title": "Certification 2",
+      "image": "/assets/images/a-propos/items/1/image.jpg"
+    },
+    {
+      "title": "Certification 3",
+      "image": "/assets/images/a-propos/items/2/image.jpg"
+    }
   ]
 }
