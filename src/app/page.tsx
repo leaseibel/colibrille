@@ -86,7 +86,7 @@ export default async function Home() {
   const prestationImages: Record<string, string> = {};
   prestationSlugs.forEach((slug, i) => {
     const img = cmsPrestations[i]?.image;
-    prestationImages[slug] = img
+    prestationImages[slug] = img && img !== 'null'
       ? `/assets/images/prestations/${img}`
       : `/assets/images/prestations/${slug}.jpg`;
   });
