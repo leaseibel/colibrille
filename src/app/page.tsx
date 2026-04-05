@@ -84,7 +84,7 @@ export default async function Home() {
   knownSlugs.forEach((slug, i) => {
     const img = cmsPrestations[i]?.image;
     prestationImages[slug] = img && img !== 'null'
-      ? `/assets/images/prestations/${img}`
+      ? (img.startsWith('/') ? img : `/assets/images/prestations/${img}`)
       : `/assets/images/prestations/${slug}.jpg`;
   });
 

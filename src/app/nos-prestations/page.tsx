@@ -48,7 +48,7 @@ export default async function NosPrestations() {
         {sorted.length > 0 ? (
           sorted.map((item) => {
             const img = item.image && item.image !== 'null'
-              ? `/assets/images/prestations/${item.image}`
+              ? (item.image.startsWith('/') ? item.image : `/assets/images/prestations/${item.image}`)
               : `/assets/images/prestations/${item.slug}.jpg`;
             const meta = defaultSections.find((d) => d.slug === item.slug);
             return (
