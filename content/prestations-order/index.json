@@ -5,12 +5,12 @@
       "summary": "Redonnez de l'éclat et un confort durable à votre véhicule grâce à nos prestations complètes de nettoyage. Nous traitons chaque recoin avec minutie pour vous offrir un habitacle sain et une carrosserie parfaitement propre."
     },
     {
-      "slug": "carrosserie",
-      "summary": "Valorisez votre patrimoine automobile en lui redonnant une apparence proche du neuf. Grâce à nos techniques de polissage professionnel, nous supprimons les micro-rayures pour raviver la brillance de votre peinture."
-    },
-    {
       "slug": "cuirs",
       "summary": "Le nettoyage en profondeur et la réparation des imperfections permettent de prolonger la durée de vie de votre intérieur. Nous nourrissons vos selleries pour leur redonner souplesse et couleur, tout en gagnant en confort."
+    },
+    {
+      "slug": "carrosserie",
+      "summary": "Valorisez votre patrimoine automobile en lui redonnant une apparence proche du neuf. Grâce à nos techniques de polissage professionnel, nous supprimons les micro-rayures pour raviver la brillance de votre peinture."
     },
     {
       "slug": "ceramique",
