@@ -3,8 +3,8 @@ import { cn } from "@/lib/utils";
 import PageHeading from "./PageHeading";
 
 type PageHeroProps = {
-  title: string;
-  epigraph: string;
+  title?: string;
+  epigraph?: string;
   tag?: string;
   className?: string;
 };
@@ -52,16 +52,18 @@ export default function PageHero({
       </div>
 
       {/* Content */}
-      <div className="relative z-[1] mx-auto flex w-full max-w-container items-center justify-center px-16 lg:px-24">
-        <div className="relative flex-1">
-          <PageHeading title={title} epigraph={epigraph} />
-          {tag && (
-            <span className="absolute right-0 bottom-24 rounded-pill bg-accent px-8 py-2 font-content font-bold text-xxs text-accent-foreground uppercase whitespace-nowrap">
-              {tag}
-            </span>
-          )}
+      {title ? (
+        <div className="relative z-[1] mx-auto flex w-full max-w-container items-center justify-center px-16 lg:px-24">
+          <div className="relative flex-1">
+            <PageHeading title={title} epigraph={epigraph} />
+            {tag && (
+              <span className="absolute right-0 bottom-24 rounded-pill bg-accent px-8 py-2 font-content font-bold text-xxs text-accent-foreground uppercase whitespace-nowrap">
+                {tag}
+              </span>
+            )}
+          </div>
         </div>
-      </div>
+      ) : null}
     </section>
   );
 }

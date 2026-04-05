@@ -8,6 +8,7 @@ type FullWidthSectionProps = {
   withTopPicture?: boolean;
   withCallToAction?: boolean;
   ctaHref?: string;
+  ctaLabel?: string;
   leadingPicture?: string;
   leadingPictureAlt?: string;
   trailingPicture?: string;
@@ -21,6 +22,7 @@ export default function FullWidthSection({
   withTopPicture = false,
   withCallToAction = false,
   ctaHref,
+  ctaLabel = "Je suis interessé•e",
   leadingPicture,
   leadingPictureAlt = "",
   trailingPicture,
@@ -75,7 +77,7 @@ export default function FullWidthSection({
                 href={ctaHref || "mailto:atelier.colibrille.17@gmail.com"}
                 className="shrink-0"
               >
-                Je suis interessé•e
+                {ctaLabel}
               </Button>
             )}
           </div>

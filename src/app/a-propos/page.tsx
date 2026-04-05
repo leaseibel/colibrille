@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Footer, PageHero, SectionHeading } from "@/components/layout";
-import { ContactCTASection } from "@/components/specific";
+import { ContactCTASection, MapAddressLink } from "@/components/specific";
 import Card from "@/components/Card";
 import FullWidthSection from "@/components/FullWidthSection";
 
@@ -55,28 +55,33 @@ export default function APropos() {
         <SectionHeading title="Mes diplômes et certifications" />
 
         <div className="flex w-full max-w-container flex-col gap-20 md:flex-row">
-          {certifications.map((src) => (
-            <Card key={src} variant="raised" className="flex-1 p-8">
+          {certifications.map((src, i) => (
+            <Card key={src} variant="raised" className="min-w-[120px] flex-[1_0_0] p-8">
               <div
-                className="relative w-full overflow-hidden rounded-atom"
-                style={{ aspectRatio: "283/196" }}
+                style={{
+                  position: "relative",
+                  width: "100%",
+                  aspectRatio: "299 / 212",
+                  overflow: "hidden",
+                  borderRadius: "var(--border-radius-atom)",
+                }}
               >
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div
-                    className="relative shrink-0"
-                    style={{
-                      transform: "rotate(-90deg)",
-                      width: "196px",
-                      height: "283px",
-                    }}
-                  >
-                    <Image
-                      src={src}
-                      alt="Certification"
-                      fill
-                      style={{ objectFit: "cover", pointerEvents: "none" }}
-                    />
-                  </div>
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    width: "70.9%",
+                    height: "141%",
+                    transform: "translate(-50%, -50%) rotate(-90deg)",
+                  }}
+                >
+                  <Image
+                    src={src}
+                    alt={`Certification ${i + 1}`}
+                    fill
+                    style={{ objectFit: "cover", pointerEvents: "none" }}
+                  />
                 </div>
               </div>
             </Card>
@@ -89,26 +94,30 @@ export default function APropos() {
         <SectionHeading title="Informations pratiques" />
 
         {/* Map card */}
-        <Card variant="raised" className="w-full max-w-container p-8">
-          <p className="w-full py-12 text-center font-display font-bold text-sm tracking-[0.8px]">
-            Nos trouver :
-          </p>
-          <div className="relative h-[420px] w-full overflow-hidden rounded-atom">
-            <Image
-              src="/assets/images/a-propos/map.jpg"
-              alt="Carte de localisation de Colibrille"
-              fill
-              className="object-cover"
+        <Card variant="raised" className="w-full max-w-container items-stretch p-8">
+          <div className="flex w-full flex-col items-center gap-8 overflow-hidden rounded-atom">
+            <p className="w-full py-12 text-center font-display font-bold text-sm tracking-[0.8px]">
+              Nos trouver :
+            </p>
+            <iframe
+              src="https://maps.google.com/maps?q=2+Rue+Le+Verrier+17440+Aytré+France&t=&z=16&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="420"
+              style={{
+                border: 0,
+                borderRadius: "var(--border-radius-atom)",
+                display: "block",
+                flexShrink: 0,
+              }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Colibrille - 2 Rue Le Verrier, 17440 Aytré"
             />
+            <div className="flex w-full items-center justify-center py-12">
+              <MapAddressLink />
+            </div>
           </div>
-          <p className="w-full py-12 text-center">
-            <a
-              href="https://maps.google.com/?q=02+Rue+Le+Verrier+17440+Aytré"
-              className="text-ghost-foreground underline"
-            >
-              02 Rue Le Verrier ZAC de Belle Air, 17440 AYTRE
-            </a>
-          </p>
         </Card>
 
         {/* Directions content */}
@@ -161,42 +170,51 @@ export default function APropos() {
         </div>
 
         {/* Info cards row */}
-        <div className="flex w-full max-w-container flex-col gap-20 md:flex-row">
+        <div className="mx-auto flex w-full max-w-content flex-col items-stretch gap-20 md:flex-row">
           {/* Horaires */}
-          <Card variant="raised" className="flex-1 p-24 md:h-[196px]">
-            <h3 className="pb-8 font-display font-bold text-sm tracking-[0.8px]">
-              Horaires d&apos;ouverture
-            </h3>
-            <div className="font-content text-xs text-primary-foreground">
-              <p>
-                Lun - Ven : <span className="font-bold">08h30 / 18h30</span>
+          <Card variant="raised" className="flex-1 p-24">
+            <div className="flex w-full flex-col items-start gap-8">
+              <div className="w-full pb-8">
+                <p className="font-display font-bold text-sm tracking-[0.8px]">
+                  Horaires d&apos;ouverture
+                </p>
+              </div>
+              <p className="whitespace-nowrap font-content text-xs text-primary-foreground">
+                <span className="font-normal">Lun - Ven : </span>
+                <span className="font-bold">08h30 / 18h30</span>
               </p>
-              <p>
-                Sam : <span className="font-bold">09h00 / 12h30</span>
+              <p className="whitespace-nowrap font-content text-xs text-primary-foreground">
+                <span className="font-normal">Sam : </span>
+                <span className="font-bold">09h00 / 12h30</span>
               </p>
-              <p>
-                Dim : <span className="font-bold">Fermé</span>
+              <p className="whitespace-nowrap font-content text-xs text-primary-foreground">
+                <span className="font-normal">Dim : </span>
+                <span className="font-bold">Fermé</span>
               </p>
             </div>
           </Card>
 
           {/* Contact */}
           <Card variant="raised" className="flex-1 p-24">
-            <h3 className="pb-8 font-display font-bold text-sm tracking-[0.8px]">
-              Contact
-            </h3>
-            <div className="flex flex-col gap-12 font-content text-xs text-primary-foreground">
-              <a href="tel:+33611489861" className="underline">
-                +33 6 11 48 98 61
-              </a>
-              <a
-                href="mailto:atelier.colibrille.17@gmail.com"
-                className="underline"
-              >
-                atelier.colibrille.17@gmail.com
-              </a>
-              <p>2 rue Le Verrier, 17440 Aytré</p>
-              <p>SIRET : 100 817 677 844 48</p>
+            <div className="flex w-full flex-col items-start gap-8">
+              <div className="w-full pb-8">
+                <p className="font-display font-bold text-sm tracking-[0.8px]">
+                  Contact
+                </p>
+              </div>
+              <div className="flex w-full flex-col items-start gap-12 font-content font-normal text-xs text-primary-foreground">
+                <a href="tel:+33611489861" className="underline">
+                  +33 6 11 48 98 61
+                </a>
+                <a
+                  href="mailto:atelier.collibrille17@gmail.com"
+                  className="underline"
+                >
+                  atelier.collibrille17@gmail.com
+                </a>
+                <p>2 rue Le Verrier, 17440 Aytré</p>
+                <div>SIRET : 100 817 677 844 48</div>
+              </div>
             </div>
           </Card>
         </div>

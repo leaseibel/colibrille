@@ -41,10 +41,10 @@ export default function Footer({ className }: FooterProps) {
 
           {/* Legal links */}
           <div className="flex flex-col gap-12 md:col-span-4 md:col-start-5 md:row-start-2 lg:col-span-2 lg:col-start-6 lg:row-start-1">
-            <Link variant="inverted" href="#">Mentions Légales</Link>
-            <Link variant="inverted" href="#">RGPD</Link>
-            <Link variant="inverted" href="#">CGV / CGU</Link>
-            <Link variant="inverted" href="#">Plan du site</Link>
+            <Link variant="inverted" href="/mentions-legales">Mentions Légales</Link>
+            <Link variant="inverted" href="/rgpd">RGPD</Link>
+            <Link variant="inverted" href="/cgv-cgu">CGV / CGU</Link>
+            <Link variant="inverted" href="/plan-du-site">Plan du site</Link>
           </div>
 
           {/* Business info */}
