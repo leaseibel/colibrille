@@ -41,7 +41,7 @@ export default async function APropos() {
       {/* Section 1: Bio */}
       <section className="section-outer bg-primary-base pt-24 pb-40">
         <FullWidthSection
-          leadingPicture={apropos?.photo ? `/assets/images/a-propos/${apropos.photo}` : "/assets/images/a-propos/corentin-portrait.jpg"}
+          leadingPicture={apropos?.photo || "/assets/images/a-propos/corentin-portrait.jpg"}
           leadingPictureAlt="Corentin, fondateur de Colibrille"
         >
           {apropos?.content ? (
@@ -84,7 +84,7 @@ export default async function APropos() {
 
         <div className="flex w-full max-w-container flex-col gap-20 md:flex-row">
           {(cmsCerts.length > 0
-            ? cmsCerts.map((c) => c.image ? `/assets/images/a-propos/${c.image}` : '')
+            ? cmsCerts.map((c) => c.image || '')
             : defaultCertifications
           ).filter(Boolean).map((src, i) => (
             <Card key={src || i} variant="raised" className="min-w-[120px] flex-[1_0_0] p-8">
