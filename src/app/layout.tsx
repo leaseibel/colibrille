@@ -23,7 +23,7 @@ const petrona = Petrona({
 
 export const metadata: Metadata = {
   // TODO: update when domain is confirmed
-  metadataBase: new URL("https://www.colibrille.fr"),
+  metadataBase: new URL("https://www.atelier-colibrille.fr"),
   title: "Colibrille | Detailing Automobile à Aytré",
   description:
     "Atelier de detailing automobile professionnel à Aytré. Nettoyage, polissage, protection céramique et rénovation de cuirs. Devis gratuit sur rendez-vous.",
@@ -52,7 +52,7 @@ export default function RootLayout({
               "@type": "LocalBusiness",
               name: "Colibrille",
               description: "Atelier de detailing automobile à Aytré",
-              url: "https://www.colibrille.fr",
+              url: "https://www.atelier-colibrille.fr",
               telephone: "+33611489861",
               email: "atelier.colibrille.17@gmail.com",
               address: {
@@ -89,7 +89,7 @@ export default function RootLayout({
               ],
               priceRange: "€€",
               image:
-                "https://www.colibrille.fr/assets/logo/logo-with-baseline.svg",
+                "https://www.atelier-colibrille.fr/assets/logo/logo-with-baseline.svg",
             }),
           }}
         />
