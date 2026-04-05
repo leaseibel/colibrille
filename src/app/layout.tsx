@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Montserrat, Petrona } from "next/font/google";
 import { headers } from "next/headers";
 import { HeaderWrapper } from "@/components/layout";
+import { getSettings } from "@/lib/settings";
 import "./globals.css";
 
 const inter = Inter({
@@ -23,6 +24,11 @@ const petrona = Petrona({
 });
 
 export async function generateMetadata(): Promise<Metadata> {
+  const settings = await getSettings();
+  const faviconUrl = settings.favicon
+    ? (settings.favicon.startsWith('/') ? settings.favicon : `/assets/${settings.favicon}`)
+    : '/icon-192.png';
+
   return {
     metadataBase: new URL("https://www.atelier-colibrille.fr"),
     title: "Colibrille | Detailing Automobile à Aytré",
@@ -32,11 +38,10 @@ export async function generateMetadata(): Promise<Metadata> {
     manifest: '/manifest.json',
     icons: {
       icon: [
-        { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-        { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+        { url: faviconUrl, type: 'image/png' },
       ],
-      apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
-      shortcut: '/favicon-32x32.png',
+      shortcut: faviconUrl,
+      apple: faviconUrl,
     },
     openGraph: {
       type: "website",
