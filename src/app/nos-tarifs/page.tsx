@@ -26,7 +26,7 @@ export default async function NosTarifs() {
       {/* Section 1: Pourquoi nous rencontrer */}
       <section className="section-outer bg-primary-base pt-24">
         <FullWidthSection
-          trailingPicture={tarifs?.photo ?? "/assets/images/tarifs/corentin.jpg"}
+          trailingPicture={tarifs?.photo ? `/assets/images/tarifs/${tarifs.photo}` : "/assets/images/tarifs/corentin.jpg"}
           trailingPictureAlt="Corentin, fondateur de Colibrille"
         >
           <h2 className="w-full pb-16 font-display font-bold text-md tracking-[1px]">

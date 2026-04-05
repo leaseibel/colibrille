@@ -4,7 +4,7 @@ import Button from "@/components/Button";
 import Card from "@/components/Card";
 import Logo from "@/components/Logo";
 import { Footer, SectionHeading } from "@/components/layout";
-import { EpigraphBanner, FeedbackButton, PrestationSummary, Testimonial } from "@/components/specific";
+import { EpigraphBanner, FeedbackButton, ImageLightbox, PrestationSummary, Testimonial } from "@/components/specific";
 import { reader } from "@/lib/keystatic-reader";
 
 export const metadata: Metadata = {
@@ -245,13 +245,15 @@ export default async function Home() {
                   description={item.description}
                   href={item.href}
                   image={
-                    <Image
-                      src={item.imageSrc}
-                      alt={item.title}
-                      width={400}
-                      height={80}
-                      className="h-full w-full object-cover"
-                    />
+                    <ImageLightbox src={item.imageSrc} alt={item.title}>
+                      <Image
+                        src={item.imageSrc}
+                        alt={item.title}
+                        width={400}
+                        height={80}
+                        className="h-full w-full object-cover"
+                      />
+                    </ImageLightbox>
                   }
                 />
               </Card>
@@ -265,13 +267,15 @@ export default async function Home() {
                   description={item.description}
                   href={item.href}
                   image={
-                    <Image
-                      src={item.imageSrc}
-                      alt={item.title}
-                      width={400}
-                      height={80}
-                      className="h-full w-full object-cover"
-                    />
+                    <ImageLightbox src={item.imageSrc} alt={item.title}>
+                      <Image
+                        src={item.imageSrc}
+                        alt={item.title}
+                        width={400}
+                        height={80}
+                        className="h-full w-full object-cover"
+                      />
+                    </ImageLightbox>
                   }
                 />
               </Card>

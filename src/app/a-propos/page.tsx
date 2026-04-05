@@ -39,7 +39,7 @@ export default async function APropos() {
       {/* Section 1: Bio */}
       <section className="section-outer bg-primary-base pt-24 pb-40">
         <FullWidthSection
-          leadingPicture={apropos?.photo ?? "/assets/images/a-propos/corentin-portrait.jpg"}
+          leadingPicture={apropos?.photo ? `/assets/images/a-propos/${apropos.photo}` : "/assets/images/a-propos/corentin-portrait.jpg"}
           leadingPictureAlt="Corentin, fondateur de Colibrille"
         >
           {apropos?.content ? (
