@@ -1,6 +1,11 @@
 {
   "items": [
     {
+      "author": "Laeticia",
+      "rating": "5",
+      "content": "La minutie de Corentin et sa passion pour les automobiles se sentent dès le premier contact. Je n'ai pas hésité à lui laisser mon véhicule pour un nettoyage intérieur et extérieur. J'ai été bluffée par le résultat! Je recommande les yeux fermés."
+    },
+    {
       "author": "Bastien",
       "rating": "5",
       "content": "Corentin est très professionnel et a été très à l'écoute de ma demande pour le polissage de mon véhicule. Je reviendrai."
@@ -9,11 +14,6 @@
       "author": "Jean-Jacques",
       "rating": "5",
       "content": "J'ai confié mon véhicule à l'entreprise Colibrille, que j'ai récemment découverte. Située à côté de chez moi, ce fut très pratique de déposer mon véhicule le matin pour le récupérer le soir. J'ai été très surpris par la qualité de la prestation. Merci au gérant pour son accueil chaleureux."
-    },
-    {
-      "author": "Laeticia",
-      "rating": "5",
-      "content": "La minutie de Corentin et sa passion pour les automobiles se sentent dès le premier contact. Je n'ai pas hésité à lui laisser mon véhicule pour un nettoyage intérieur et extérieur. J'ai été bluffée par le résultat! Je recommande les yeux fermés."
     }
   ]
 }
