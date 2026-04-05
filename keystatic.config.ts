@@ -27,7 +27,8 @@ export default config({
     // ─── PARAMÈTRES GLOBAUX ───────────────────────────────
     settings: singleton({
       label: 'Informations générales',
-      path: 'content/settings',
+      path: 'content/settings/',
+      format: { data: 'json' },
       schema: {
         phone: fields.text({
           label: 'Numéro de téléphone',
@@ -96,7 +97,8 @@ export default config({
     // ─── LANDING PAGE ─────────────────────────────────────
     heroContent: singleton({
       label: 'Hero de la landing',
-      path: 'content/landing/hero',
+      path: 'content/landing/hero/',
+      format: { data: 'json' },
       schema: {
         subtitle: fields.text({
           label: 'Sous-titre',
@@ -107,7 +109,8 @@ export default config({
 
     tarifsContent: singleton({
       label: 'Nos Tarifs — Card "Pourquoi nous rencontrer"',
-      path: 'content/tarifs',
+      path: 'content/tarifs/',
+      format: { data: 'json' },
       schema: {
         photo: fields.image({
           label: 'Photo (Corentin)',
@@ -124,7 +127,8 @@ export default config({
 
     aproposContent: singleton({
       label: 'À Propos — Card bio',
-      path: 'content/apropos',
+      path: 'content/apropos/',
+      format: { data: 'json' },
       schema: {
         photo: fields.image({
           label: 'Photo (portrait)',
@@ -158,7 +162,8 @@ export default config({
 
     mentionsLegales: singleton({
       label: 'Mentions Légales',
-      path: 'content/pages/mentions-legales',
+      path: 'content/pages/mentions-legales/',
+      format: { data: 'json' },
       schema: {
         content: fields.document({
           label: 'Contenu',
@@ -171,7 +176,8 @@ export default config({
 
     rgpd: singleton({
       label: 'Politique de confidentialité (RGPD)',
-      path: 'content/pages/rgpd',
+      path: 'content/pages/rgpd/',
+      format: { data: 'json' },
       schema: {
         content: fields.document({
           label: 'Contenu',
@@ -184,7 +190,8 @@ export default config({
 
     cgvCgu: singleton({
       label: 'CGV / CGU',
-      path: 'content/pages/cgv-cgu',
+      path: 'content/pages/cgv-cgu/',
+      format: { data: 'json' },
       schema: {
         content: fields.document({
           label: 'Contenu',
@@ -197,7 +204,8 @@ export default config({
 
     planDuSite: singleton({
       label: 'Plan du site',
-      path: 'content/pages/plan-du-site',
+      path: 'content/pages/plan-du-site/',
+      format: { data: 'json' },
       schema: {
         content: fields.document({
           label: 'Contenu',
@@ -215,6 +223,7 @@ export default config({
       label: 'Avis clients',
       path: 'content/testimonials/*',
       slugField: 'author',
+      format: { data: 'json' },
       schema: {
         author: fields.slug({ name: { label: 'Auteur' } }),
         rating: fields.select({
@@ -238,6 +247,7 @@ export default config({
       label: 'Nos Prestations',
       path: 'content/prestations/*',
       slugField: 'slug',
+      format: { data: 'json' },
       schema: {
         slug: fields.slug({ name: { label: 'Identifiant (ne pas modifier)' } }),
         title: fields.text({ label: 'Titre', defaultValue: 'Nettoyage intérieur/extérieur' }),
@@ -258,6 +268,7 @@ export default config({
       label: 'Landing — Résumés des prestations',
       path: 'content/landing-prestations/*',
       slugField: 'slug',
+      format: { data: 'json' },
       schema: {
         slug: fields.slug({ name: { label: 'Identifiant' } }),
         title: fields.text({ label: 'Titre affiché sur la card' }),
@@ -271,6 +282,7 @@ export default config({
       label: 'Diplômes et certifications',
       path: 'content/certifications/*',
       slugField: 'title',
+      format: { data: 'json' },
       schema: {
         title: fields.slug({ name: { label: 'Titre du diplôme' } }),
         image: fields.image({
@@ -286,6 +298,7 @@ export default config({
       label: 'FAQ',
       path: 'content/faq/*',
       slugField: 'question',
+      format: { data: 'json' },
       schema: {
         question: fields.slug({ name: { label: 'Question' } }),
         answer: fields.document({
