@@ -1,18 +1,31 @@
 {
-  "photo": "corentin.jpg",
+  "photo": null,
   "content": {
     "document": [
       {
         "type": "paragraph",
-        "children": [{ "text": "Chez Colibrille, nous avons fait le choix de ne pas proposer de forfaits standardisés, contrairement à de nombreux acteurs du domaine du detailing automobile. Pourquoi ? Parce que chaque véhicule est unique, tout comme les attentes, les besoins, et les exigences de son propriétaire." }]
+        "children": [
+          {
+            "text": "Chez Colibrille, nous avons fait le choix de ne pas proposer de forfaits standardisés, contrairement à de nombreux acteurs du domaine du detailing automobile. Pourquoi ? Parce que chaque véhicule est unique, tout comme les attentes, les besoins, et les exigences de son propriétaire."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "children": [{ "text": "L'état général du véhicule, son utilisation, son kilométrage, les matériaux présents à l'intérieur ou encore le niveau de résultat souhaité sont autant de facteurs qui influencent le travail à réaliser." }]
+        "children": [
+          {
+            "text": "L'état général du véhicule, son utilisation, son kilométrage, les matériaux présents à l'intérieur ou encore le niveau de résultat souhaité sont autant de facteurs qui influencent le travail à réaliser."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "children": [{ "text": "C'est pourquoi nous privilégions une approche entièrement personnalisée et sur mesure.", "bold": true }]
+        "children": [
+          {
+            "text": "C'est pourquoi nous privilégions une approche entièrement personnalisée et sur mesure.",
+            "bold": true
+          }
+        ]
       }
     ]
   }
