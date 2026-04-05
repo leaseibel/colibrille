@@ -19,24 +19,28 @@ const defaultPrestations = [
     description:
       "Redonnez de l'éclat et un confort durable à votre véhicule grâce à nos prestations complètes de nettoyage. Nous traitons chaque recoin avec minutie pour vous offrir un habitacle sain et une carrosserie parfaitement propre.",
     href: "/nos-prestations#nettoyage",
+    imageSrc: "/assets/images/prestations/nettoyage.jpg",
   },
   {
     title: "Rénovation de la carrosserie",
     description:
       "Valorisez votre patrimoine automobile en lui redonnant une apparence proche du neuf. Grâce à nos techniques de polissage professionnel, nous supprimons les micro-rayures pour raviver la brillance de votre peinture.",
     href: "/nos-prestations#carrosserie",
+    imageSrc: "/assets/images/prestations/carrosserie.jpg",
   },
   {
     title: "Rénovation des cuirs",
     description:
       "Le nettoyage en profondeur et la réparation des imperfections permettent de prolonger la durée de vie de votre intérieur. Nous nourrissons vos selleries pour leur redonner souplesse et couleur, tout en gagnant en confort.",
     href: "/nos-prestations#cuirs",
+    imageSrc: "/assets/images/prestations/cuirs.jpg",
   },
   {
     title: "Protection céramique",
     description:
       "Protégez durablement votre carrosserie contre les agressions extérieures, les UV et contaminants. Cette barrière hydrophobe renforce la brillance de votre véhicule, préserve sa peinture et facilite ses futurs entretiens réguliers.",
     href: "/nos-prestations#ceramique",
+    imageSrc: "/assets/images/prestations/ceramique.jpg",
   },
 ];
 
@@ -74,6 +78,19 @@ export default async function Home() {
         .map((t) => ({ author: t.author, quote: t.content }))
     : defaultTestimonials;
 
+  // Prestation images from Keystatic
+  const prestationSlugs = ['nettoyage', 'carrosserie', 'cuirs', 'ceramique'] as const;
+  const cmsPrestations = await Promise.all(
+    prestationSlugs.map((slug) => reader.collections.prestations.read(slug))
+  );
+  const prestationImages: Record<string, string> = {};
+  prestationSlugs.forEach((slug, i) => {
+    const img = cmsPrestations[i]?.image;
+    prestationImages[slug] = img
+      ? `/assets/images/prestations/${img}`
+      : `/assets/images/prestations/${slug}.jpg`;
+  });
+
   // Landing prestations
   const lpSlugs = await reader.collections.landingPrestations.list();
   const cmsLandingPrestations = await Promise.all(
@@ -86,6 +103,7 @@ export default async function Home() {
           title: p.title,
           description: p.summary,
           href: `/nos-prestations${p.link}`,
+          imageSrc: prestationImages[p.slug] ?? `/assets/images/prestations/${p.slug}.jpg`,
         }))
     : defaultPrestations;
 
@@ -236,6 +254,15 @@ export default async function Home() {
                   title={item.title}
                   description={item.description}
                   href={item.href}
+                  image={
+                    <Image
+                      src={item.imageSrc}
+                      alt={item.title}
+                      width={400}
+                      height={80}
+                      className="h-full w-full object-cover"
+                    />
+                  }
                 />
               </Card>
             ))}
@@ -247,6 +274,15 @@ export default async function Home() {
                   title={item.title}
                   description={item.description}
                   href={item.href}
+                  image={
+                    <Image
+                      src={item.imageSrc}
+                      alt={item.title}
+                      width={400}
+                      height={80}
+                      className="h-full w-full object-cover"
+                    />
+                  }
                 />
               </Card>
             ))}
