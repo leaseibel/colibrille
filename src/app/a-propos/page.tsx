@@ -86,20 +86,20 @@ export default async function APropos() {
             : defaultCertifications
           ).filter(Boolean).map((src, i) => (
             <Card key={src || i} variant="raised" className="min-w-[120px] flex-[1_0_0] p-8">
-              <div
-                style={{
-                  position: "relative",
-                  width: "100%",
-                  aspectRatio: "3 / 4",
-                  overflow: "hidden",
-                  borderRadius: "var(--border-radius-atom)",
-                }}
-              >
+              <div style={{ width: "100%" }}>
                 <Image
                   src={src}
                   alt={`Certification formation detailing - Corentin Seibel (${i + 1})`}
-                  fill
-                  style={{ objectFit: "cover" }}
+                  width={594}
+                  height={840}
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "contain",
+                    borderRadius: "var(--border-radius-atom)",
+                    display: "block",
+                  }}
                 />
               </div>
             </Card>
