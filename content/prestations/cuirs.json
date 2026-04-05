@@ -1,5 +1,6 @@
 {
   "slug": "cuirs",
   "title": "Rénovation des cuirs",
-  "image": "/assets/images/prestations/cuirs/image.jpg"
+  "image": "/assets/images/prestations/cuirs/image.jpg",
+  "order": 3
 }

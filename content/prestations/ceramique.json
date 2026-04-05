@@ -1,5 +1,6 @@
 {
   "slug": "ceramique",
   "title": "Protection céramique",
-  "image": "/assets/images/prestations/ceramique/image.jpg"
+  "image": "/assets/images/prestations/ceramique/image.jpg",
+  "order": 4
 }

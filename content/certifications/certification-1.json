@@ -1,4 +1,5 @@
 {
   "title": "Certification 1",
-  "image": "/assets/images/a-propos/certification-1/image.jpg"
+  "image": "/assets/images/a-propos/certification-1/image.jpg",
+  "order": 1
 }

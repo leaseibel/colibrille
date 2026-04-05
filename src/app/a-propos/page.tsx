@@ -25,9 +25,11 @@ export default async function APropos() {
   const settings = await getSettings();
   const apropos = await reader.singletons.aproposContent.read();
   const certSlugs = await reader.collections.certifications.list();
-  const cmsCerts = await Promise.all(
+  const cmsCerts = (await Promise.all(
     certSlugs.map((slug) => reader.collections.certifications.read(slug))
-  );
+  ))
+    .filter((c): c is NonNullable<typeof c> => c !== null)
+    .sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
 
   const telHref = `tel:+33${settings.phone.replace(/\s/g, '').replace(/^0/, '')}`;
 
@@ -84,7 +86,7 @@ export default async function APropos() {
 
         <div className="flex w-full max-w-container flex-col gap-20 md:flex-row">
           {(cmsCerts.length > 0
-            ? cmsCerts.filter((c): c is NonNullable<typeof c> => c !== null).map((c) => c.image ?? '')
+            ? cmsCerts.map((c) => c.image ?? '')
             : defaultCertifications
           ).map((src, i) => (
             <Card key={src || i} variant="raised" className="min-w-[120px] flex-[1_0_0] p-8">

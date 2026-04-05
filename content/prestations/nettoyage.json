@@ -1,5 +1,6 @@
 {
   "slug": "nettoyage",
   "title": "Nettoyage intérieur/extérieur",
-  "image": "/assets/images/prestations/nettoyage/image.jpg"
+  "image": "/assets/images/prestations/nettoyage/image.jpg",
+  "order": 1
 }

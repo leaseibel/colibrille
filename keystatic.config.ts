@@ -260,6 +260,11 @@ export default config({
           label: 'Contenu',
           formatting: true,
         }),
+        order: fields.integer({
+          label: 'Ordre d\'affichage',
+          defaultValue: 1,
+          validation: { isRequired: true, min: 1 },
+        }),
       }
     }),
 
@@ -289,6 +294,11 @@ export default config({
           label: 'Image du diplôme (format portrait)',
           directory: 'public/assets/images/a-propos',
           publicPath: '/assets/images/a-propos/',
+        }),
+        order: fields.integer({
+          label: 'Ordre d\'affichage',
+          defaultValue: 1,
+          validation: { isRequired: true, min: 1 },
         }),
       }
     }),
