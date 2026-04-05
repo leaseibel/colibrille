@@ -26,7 +26,7 @@ const petrona = Petrona({
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSettings();
   const faviconSrc = settings.favicon
-    ? `/assets/${settings.favicon}`
+    ? (settings.favicon.startsWith('/') ? settings.favicon : `/assets/${settings.favicon}`)
     : "/icon-192.png";
 
   return {
