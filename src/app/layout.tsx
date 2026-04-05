@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Montserrat, Petrona } from "next/font/google";
 import { headers } from "next/headers";
 import { HeaderWrapper } from "@/components/layout";
+import { getSettings } from "@/lib/settings";
 import "./globals.css";
 
 const inter = Inter({
@@ -22,24 +23,30 @@ const petrona = Petrona({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  // TODO: update when domain is confirmed
-  metadataBase: new URL("https://www.atelier-colibrille.fr"),
-  title: "Colibrille | Detailing Automobile à Aytré",
-  description:
-    "Atelier de detailing automobile professionnel à Aytré. Nettoyage, polissage, protection céramique et rénovation de cuirs. Devis gratuit sur rendez-vous.",
-  alternates: { canonical: "/" },
-  icons: {
-    icon: "/icon-192.png",
-    apple: "/apple-icon.png",
-  },
-  openGraph: {
-    type: "website",
-    locale: "fr_FR",
-    siteName: "Colibrille",
-    images: [{ url: "/assets/logo/logo-with-baseline.svg" }],
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const settings = await getSettings();
+  const faviconSrc = settings.favicon
+    ? `/assets/${settings.favicon}`
+    : "/icon-192.png";
+
+  return {
+    metadataBase: new URL("https://www.atelier-colibrille.fr"),
+    title: "Colibrille | Detailing Automobile à Aytré",
+    description:
+      "Atelier de detailing automobile professionnel à Aytré. Nettoyage, polissage, protection céramique et rénovation de cuirs. Devis gratuit sur rendez-vous.",
+    alternates: { canonical: "/" },
+    icons: {
+      icon: faviconSrc,
+      apple: faviconSrc,
+    },
+    openGraph: {
+      type: "website",
+      locale: "fr_FR",
+      siteName: "Colibrille",
+      images: [{ url: "/assets/logo/logo-with-baseline.svg" }],
+    },
+  };
+}
 
 export default async function RootLayout({
   children,
