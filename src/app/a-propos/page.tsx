@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "Découvrez Colibrille, atelier de detailing automobile fondé par Corentin Seibel. Passion, rigueur et expertise au service de votre véhicule à Aytré.",
 };
 import { Footer, PageHero, SectionHeading } from "@/components/layout";
-import { ContactCTASection, MapAddressLink } from "@/components/specific";
+import { ContactCTASection, MapAddressLink, ImageLightbox } from "@/components/specific";
 import Card from "@/components/Card";
 import FullWidthSection from "@/components/FullWidthSection";
 import { getSettings } from "@/lib/settings";
@@ -88,33 +88,38 @@ export default async function APropos() {
             : defaultCertifications
           ).map((src, i) => (
             <Card key={src || i} variant="raised" className="min-w-[120px] flex-[1_0_0] p-8">
-              <div
-                style={{
-                  position: "relative",
-                  width: "100%",
-                  aspectRatio: "299 / 212",
-                  overflow: "hidden",
-                  borderRadius: "var(--border-radius-atom)",
-                }}
+              <ImageLightbox
+                src={src}
+                alt={`Certification formation detailing - Corentin Seibel (${i + 1})`}
               >
                 <div
                   style={{
-                    position: "absolute",
-                    top: "50%",
-                    left: "50%",
-                    width: "70.9%",
-                    height: "141%",
-                    transform: "translate(-50%, -50%) rotate(-90deg)",
+                    position: "relative",
+                    width: "100%",
+                    aspectRatio: "299 / 212",
+                    overflow: "hidden",
+                    borderRadius: "var(--border-radius-atom)",
                   }}
                 >
-                  <Image
-                    src={src}
-                    alt={`Certification formation detailing - Corentin Seibel (${i + 1})`}
-                    fill
-                    style={{ objectFit: "cover", pointerEvents: "none" }}
-                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "50%",
+                      left: "50%",
+                      width: "70.9%",
+                      height: "141%",
+                      transform: "translate(-50%, -50%) rotate(-90deg)",
+                    }}
+                  >
+                    <Image
+                      src={src}
+                      alt={`Certification formation detailing - Corentin Seibel (${i + 1})`}
+                      fill
+                      style={{ objectFit: "cover", pointerEvents: "none" }}
+                    />
+                  </div>
                 </div>
-              </div>
+              </ImageLightbox>
             </Card>
           ))}
         </div>
