@@ -13,6 +13,8 @@ export default function FeedbackButton({
   return (
     <a
       href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       className={cn(
         "inline-flex items-center gap-12 rounded-pill bg-secondary px-16 py-8 font-content font-medium text-sm text-secondary-foreground",
         className,
