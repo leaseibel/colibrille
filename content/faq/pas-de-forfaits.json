@@ -1,12 +1,4 @@
 {
   "question": "Pourquoi n'y a-t-il pas de forfaits ou de tarifs affichés sur votre site ?",
-  "order": 5,
-  "answer": {
-    "document": [
-      {
-        "type": "paragraph",
-        "children": [{ "text": "Dans le domaine du detailing, chaque véhicule est unique. Son état, son historique, son niveau d'encrassement, la présence de micro-rayures, de défauts ou de contaminations varient d'une automobile à l'autre. Pour vous proposer un travail réellement adapté et un résultat à la hauteur de vos attentes, il est indispensable que nous évaluions à l'atelier l'entretien et la correction à y apporter. Comme dans tout métier artisanal, un devis sérieux ne peut pas être standardisé. Chez Colibrille, nous réalisons donc un devis sur mesure, afin de vous garantir un prix juste, transparent et parfaitement adapté aux besoins réels de votre véhicule." }]
-      }
-    ]
-  }
+  "order": 5
 }
