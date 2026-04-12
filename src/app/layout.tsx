@@ -43,6 +43,9 @@ export async function generateMetadata(): Promise<Metadata> {
       shortcut: faviconUrl,
       apple: faviconUrl,
     },
+    verification: {
+      google: 'BGPpw8wUjKZpnCKyUvPbnpdo-teHOSCq51lSbN5joRE',
+    },
     openGraph: {
       type: "website",
       locale: "fr_FR",
