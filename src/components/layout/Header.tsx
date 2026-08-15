@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import NextLink from "next/link";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import Logo from "@/components/Logo";
 import Menu from "@/components/Menu";
@@ -16,6 +17,7 @@ type HeaderProps = {
 export default function Header({ className }: HeaderProps) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     function handleScroll() {
@@ -35,6 +37,11 @@ export default function Header({ className }: HeaderProps) {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  // Close the mobile drawer on route change (covers browser back/forward too)
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   return (
     <>
@@ -77,7 +84,10 @@ export default function Header({ className }: HeaderProps) {
 
     {/* Mobile drawer — outside header to avoid height clipping */}
     <Drawer isOpen={open} onClose={() => setOpen(false)}>
-      <Menu variant="medium" />
+      {/* Closes the drawer when the active tab is clicked, where the pathname does not change */}
+      <div onClick={() => setOpen(false)}>
+        <Menu variant="medium" />
+      </div>
     </Drawer>
   </>
   );
