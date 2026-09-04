@@ -9,6 +9,14 @@
       "summary": "Valorisez votre patrimoine automobile en lui redonnant une apparence proche du neuf. Grâce à nos techniques de polissage professionnel, nous supprimons les micro-rayures pour raviver la brillance de votre peinture."
     },
     {
+      "slug": "spot-repair",
+      "summary": "Une rayure un peu profonde ? Un impact ? Un petit éclat de peinture ? Le Spot Repair permet de réparer localement les petites imperfections sans avoir à repeindre l'intégralité de l'élément, pour une finition proche de l'état neuf."
+    },
+    {
+      "slug": "optiques",
+      "summary": "Redonnez clarté et transparence aux optiques de votre véhicule grâce à notre technique de rénovation. Nous éliminons le jaunissement, le ternissement et les micro-rayures afin de leur redonner un aspect net et une transparence totale."
+    },
+    {
       "slug": "cuirs",
       "summary": "Le nettoyage en profondeur et la réparation des imperfections permettent de prolonger la durée de vie de votre intérieur. Nous nourrissons vos selleries pour leur redonner souplesse et couleur, tout en gagnant en confort."
     },

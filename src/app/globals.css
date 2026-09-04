@@ -343,29 +343,6 @@ body {
   }
 }
 
-/* Prestation rows */
-.prestation-row {
-  display: flex;
-  flex-direction: row;
-  flex: 1;
-  min-width: 580px;
-  gap: var(--layout-gap-500);
-  align-items: stretch;
-}
-
-@media (max-width: 579px) {
-  .prestation-row {
-    flex-direction: column;
-    min-width: unset;
-    width: 100%;
-  }
-}
-
-.prestation-card {
-  flex: 1;
-  min-width: 280px;
-}
-
 /* FullWidthSection side pictures */
 .fws-trailing-picture,
 .fws-leading-picture {

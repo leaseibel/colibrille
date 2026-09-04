@@ -4,16 +4,39 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Button from "@/components/Button";
 import Card from "@/components/Card";
+import Icon from "@/components/Icon";
 import Logo from "@/components/Logo";
 import { Footer, SectionHeading } from "@/components/layout";
 import { EpigraphBanner, FeedbackButton, PrestationSummary, Testimonial } from "@/components/specific";
+import { cn } from "@/lib/utils";
 import { reader } from "@/lib/keystatic-reader";
 
 export const metadata: Metadata = {
   title: "Colibrille | Detailing Automobile à Aytré",
   description:
-    "Atelier de detailing automobile professionnel à Aytré. Nettoyage, polissage, protection céramique et rénovation de cuirs. Devis gratuit sur rendez-vous.",
+    "Atelier de detailing automobile à Aytré : nettoyage, polissage, Spot Repair, rénovation des optiques et des cuirs, protection céramique. Devis gratuit sur rendez-vous.",
 };
+
+/* Grid columns per breakpoint for the prestations section.
+   The teaser card fills whatever columns are left on the last row,
+   so adding a prestation never leaves a hole. */
+const PRESTATION_COLS_MD = 2;
+const PRESTATION_COLS_LG = 4;
+
+const TEASER_SPAN_MD: Record<number, string> = {
+  1: "md:col-span-1",
+  2: "md:col-span-2",
+};
+
+const TEASER_SPAN_LG: Record<number, string> = {
+  1: "lg:col-span-1",
+  2: "lg:col-span-2",
+  3: "lg:col-span-3",
+  4: "lg:col-span-4",
+};
+
+const remainingCols = (count: number, cols: number) =>
+  count % cols === 0 ? cols : cols - (count % cols);
 
 const defaultPrestations = [
   {
@@ -29,6 +52,20 @@ const defaultPrestations = [
       "Valorisez votre patrimoine automobile en lui redonnant une apparence proche du neuf. Grâce à nos techniques de polissage professionnel, nous supprimons les micro-rayures pour raviver la brillance de votre peinture.",
     href: "/nos-prestations#carrosserie",
     imageSrc: "/assets/images/prestations/carrosserie.jpg",
+  },
+  {
+    title: "Spot Repair",
+    description:
+      "Une rayure un peu profonde ? Un impact ? Un petit éclat de peinture ? Le Spot Repair permet de réparer localement les petites imperfections sans avoir à repeindre l'intégralité de l'élément, pour une finition proche de l'état neuf.",
+    href: "/nos-prestations#spot-repair",
+    imageSrc: "/assets/images/prestations/spot-repair.jpg",
+  },
+  {
+    title: "Rénovation des optiques",
+    description:
+      "Redonnez clarté et transparence aux optiques de votre véhicule grâce à notre technique de rénovation. Nous éliminons le jaunissement, le ternissement et les micro-rayures afin de leur redonner un aspect net et une transparence totale.",
+    href: "/nos-prestations#optiques",
+    imageSrc: "/assets/images/prestations/optiques.jpg",
   },
   {
     title: "Rénovation des cuirs",
@@ -76,7 +113,7 @@ export default async function Home() {
     : defaultTestimonials;
 
   // Prestation images from Keystatic
-  const knownSlugs = ['nettoyage', 'carrosserie', 'cuirs', 'ceramique'] as const;
+  const knownSlugs = ['nettoyage', 'carrosserie', 'spot-repair', 'optiques', 'cuirs', 'ceramique'] as const;
   const cmsPrestations = await Promise.all(
     knownSlugs.map((slug) => reader.collections.prestations.read(slug))
   );
@@ -238,46 +275,47 @@ export default async function Home() {
       <section className="section-outer flex w-full flex-col items-center bg-primary-base py-40">
         <SectionHeading title="Nos Prestations" />
 
-        <div className="flex w-full max-w-container flex-wrap gap-20">
-          <div className="prestation-row">
-            {prestations.slice(0, 2).map((item) => (
-              <Card key={item.title} variant="raised" className="prestation-card p-8">
-                <PrestationSummary
-                  title={item.title}
-                  description={item.description}
-                  href={item.href}
-                  image={
-                    <Image
-                      src={item.imageSrc}
-                      alt={item.title}
-                      width={400}
-                      height={80}
-                      className="h-full w-full object-cover"
-                    />
-                  }
-                />
-              </Card>
-            ))}
-          </div>
-          <div className="prestation-row">
-            {prestations.slice(2, 4).map((item) => (
-              <Card key={item.title} variant="raised" className="prestation-card p-8">
-                <PrestationSummary
-                  title={item.title}
-                  description={item.description}
-                  href={item.href}
-                  image={
-                    <Image
-                      src={item.imageSrc}
-                      alt={item.title}
-                      width={400}
-                      height={80}
-                      className="h-full w-full object-cover"
-                    />
-                  }
-                />
-              </Card>
-            ))}
+        <div className="grid w-full max-w-container grid-cols-1 gap-20 md:grid-cols-2 lg:grid-cols-4">
+          {prestations.map((item) => (
+            <Card key={item.title} variant="raised" layout="subgrid" className="row-span-2 p-8">
+              <PrestationSummary
+                title={item.title}
+                description={item.description}
+                href={item.href}
+                image={
+                  <Image
+                    src={item.imageSrc}
+                    alt={item.title}
+                    width={400}
+                    height={80}
+                    className="h-full w-full object-cover"
+                  />
+                }
+              />
+            </Card>
+          ))}
+
+          {/* Teaser: fills the columns left empty on the last row */}
+          <div
+            className={cn(
+              "flex row-span-2",
+              TEASER_SPAN_MD[remainingCols(prestations.length, PRESTATION_COLS_MD)],
+              TEASER_SPAN_LG[remainingCols(prestations.length, PRESTATION_COLS_LG)],
+            )}
+          >
+            <div className="flex flex-1 flex-col items-center justify-center gap-16 rounded-container border border-dashed border-primary-stroke p-32 text-center">
+              <Icon name="car" size="x-large" className="text-primary-foreground" />
+              <p className="font-display font-bold text-sm tracking-[0.8px] text-primary-foreground">
+                De nouvelles prestations arrivent
+              </p>
+              <p className="font-content font-normal text-xs text-primary-foreground">
+                L&apos;atelier fait grandir son savoir-faire au fil des saisons.
+                Un besoin qui ne figure pas dans cette liste ? Parlons-en.
+              </p>
+              <Button variant="secondary" href="/a-propos#contact-cta">
+                Nous contacter
+              </Button>
+            </div>
           </div>
         </div>
       </section>

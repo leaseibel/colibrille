@@ -17,16 +17,16 @@ export default function PrestationSummary({
   className,
 }: PrestationSummaryProps) {
   return (
-    <div className={cn("flex flex-col gap-8", className)}>
+    <div className={cn("grid grid-rows-subgrid row-span-2", className)}>
       {/* Heading */}
-      <div className="overflow-hidden rounded-atom">
+      <div className="flex flex-col overflow-hidden rounded-atom">
         {/* Image slot */}
-        <div className="h-[80px] w-full">
+        <div className="h-[80px] w-full shrink-0">
           {image ?? <div className="h-full w-full bg-primary-stroke" />}
         </div>
 
         {/* Title bar */}
-        <div className="flex min-h-[48px] items-center justify-center bg-brand p-16">
+        <div className="flex flex-1 items-center justify-center bg-brand p-16">
           <span className="font-display font-bold text-sm tracking-[0.8px] text-brand-fg-neutral text-center">
             {title}
           </span>
@@ -34,11 +34,11 @@ export default function PrestationSummary({
       </div>
 
       {/* Body */}
-      <div className="flex flex-col items-center gap-24 p-16">
+      <div className="flex flex-col items-center gap-24 px-16 pb-16 pt-4">
         <p className="font-content font-normal text-xs text-primary-foreground text-center">
           {description}
         </p>
-        <Button variant="primary" href={href}>
+        <Button variant="primary" href={href} className="mt-auto">
           En savoir +
         </Button>
       </div>

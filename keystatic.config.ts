@@ -153,6 +153,8 @@ export default config({
               options: [
                 { value: 'nettoyage', label: 'Nettoyage intérieur/extérieur' },
                 { value: 'carrosserie', label: 'Rénovation de la carrosserie' },
+                { value: 'spot-repair', label: 'Spot Repair' },
+                { value: 'optiques', label: 'Rénovation des optiques' },
                 { value: 'cuirs', label: 'Rénovation des cuirs' },
                 { value: 'ceramique', label: 'Protection céramique' },
               ]

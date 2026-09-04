@@ -6,7 +6,7 @@ import { Footer, PageHero } from "@/components/layout";
 export const metadata: Metadata = {
   title: "Nos Prestations | Colibrille - Detailing Automobile Aytré",
   description:
-    "Découvrez toutes nos prestations de detailing : nettoyage intérieur/extérieur, rénovation carrosserie, cuirs, protection céramique. Atelier Colibrille à Aytré.",
+    "Nos prestations de detailing : nettoyage intérieur/extérieur, rénovation carrosserie, Spot Repair, optiques, cuirs, protection céramique. Colibrille, Aytré.",
 };
 import { ContactCTASection } from "@/components/specific";
 import FullWidthSection from "@/components/FullWidthSection";
@@ -18,6 +18,8 @@ const CTA_HREF = "#contact-cta";
 const defaultSections = [
   { slug: "nettoyage", title: "Nettoyage intérieur/extérieur", imageAlt: "Nettoyage intérieur et extérieur automobile" },
   { slug: "carrosserie", title: "Rénovation de la carrosserie", imageAlt: "Rénovation de carrosserie automobile" },
+  { slug: "spot-repair", title: "Spot Repair", imageAlt: "Spot Repair, réparation localisée de peinture automobile" },
+  { slug: "optiques", title: "Rénovation des optiques", imageAlt: "Rénovation des optiques de phares automobiles" },
   { slug: "cuirs", title: "Rénovation des cuirs", imageAlt: "Rénovation des cuirs automobiles" },
   { slug: "ceramique", title: "Protection céramique", imageAlt: "Protection céramique automobile" },
 ];
@@ -25,7 +27,7 @@ const defaultSections = [
 export default async function NosPrestations() {
   const orderData = await reader.singletons.prestationsOrder.read();
   const orderedSlugs = orderData?.items?.map((item) => item.slug)
-    ?? ['nettoyage', 'carrosserie', 'cuirs', 'ceramique'];
+    ?? ['nettoyage', 'carrosserie', 'spot-repair', 'optiques', 'cuirs', 'ceramique'];
 
   const prestations = await Promise.all(
     orderedSlugs.map(async (slug) => {
