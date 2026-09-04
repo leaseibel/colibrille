@@ -57,6 +57,16 @@ export default async function PlanDuSite() {
                 </a>
               </li>
               <li className="pb-16">
+                <a href="/nos-prestations#spot-repair" className="font-content font-medium text-sm text-ghost-foreground underline">
+                  Spot Repair
+                </a>
+              </li>
+              <li className="pb-16">
+                <a href="/nos-prestations#optiques" className="font-content font-medium text-sm text-ghost-foreground underline">
+                  Rénovation des optiques
+                </a>
+              </li>
+              <li className="pb-16">
                 <a href="/nos-prestations#cuirs" className="font-content font-medium text-sm text-ghost-foreground underline">
                   Rénovation des cuirs
                 </a>
